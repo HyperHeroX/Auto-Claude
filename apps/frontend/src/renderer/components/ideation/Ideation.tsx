@@ -1,4 +1,5 @@
 import { TabsContent } from '../ui/tabs';
+import { useTranslation } from 'react-i18next';
 import { EnvConfigModal } from '../EnvConfigModal';
 import { IDEATION_TYPE_DESCRIPTIONS } from '../../../shared/constants';
 import { IdeationEmptyState } from './IdeationEmptyState';
@@ -69,6 +70,8 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
     getIdeasByType
   } = useIdeation(projectId, { onGoToTask, showArchived });
 
+  const { t } = useTranslation(['ideation', 'common']);
+
   // Show generation progress with streaming ideas (use isGenerating flag for reliable state)
   if (isGenerating) {
     return (
@@ -119,8 +122,8 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
           open={showEnvConfigModal}
           onOpenChange={setShowEnvConfigModal}
           onConfigured={handleEnvConfigured}
-          title="Claude Authentication Required"
-          description="A Claude Code OAuth token is required to generate AI-powered feature ideas."
+          title={t('ideation:authRequired')}
+          description={t('ideation:authDescription')}
           projectId={projectId}
         />
       </>
@@ -170,7 +173,7 @@ export function Ideation({ projectId, onGoToTask }: IdeationProps) {
               ))}
               {activeIdeas.length === 0 && (
                 <div className="text-center py-8 text-muted-foreground">
-                  No ideas to display
+                  {t('ideation:progress.noIdeasToDisplay')}
                 </div>
               )}
             </div>

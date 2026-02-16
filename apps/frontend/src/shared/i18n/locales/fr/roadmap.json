@@ -1,0 +1,89 @@
+{
+  "tabs": {
+    "kanban": "Kanban",
+    "phases": "Phases",
+    "allFeatures": "Toutes les fonctionnalités",
+    "byPriority": "Par priorité"
+  },
+  "clickToViewAnalysis": "Cliquez pour voir l'analyse détaillée",
+  "addFeatureTooltip": "Ajouter une fonctionnalité à la feuille de route",
+  "regenerateTooltip": "Régénérer la feuille de route",
+  "emptyState": {
+    "title": "Pas encore de feuille de route",
+    "description": "Générez une feuille de route alimentée par l'IA qui comprend le public cible de votre projet et crée un plan stratégique de fonctionnalités.",
+    "generate": "Générer la feuille de route"
+  },
+  "progress": "Progression",
+  "milestones": "Jalons",
+  "description": "Description",
+  "rationale": "Justification",
+  "complexity": "Complexité",
+  "impact": "Impact",
+  "dependencies": "Dépendances",
+  "competitorTooltip": "Cette fonctionnalité répond aux points faibles des concurrents",
+  "marketInsightsSummary": "Résumé des analyses de marché",
+  "dropHere": "Déposer ici",
+  "header": {
+    "title": "Feuille de route",
+    "generate": "Générer la feuille de route",
+    "lastGenerated": "Dernière génération",
+    "competitorAnalysis": "Analyse concurrentielle",
+    "addFeature": "Ajouter une fonctionnalité",
+    "target": "Cible",
+    "features": "fonctionnalités",
+    "phases": "phases",
+    "morePersonas": "+{{count}} personas supplémentaires",
+    "secondaryPersonas": "Personas secondaires"
+  },
+  "phase": {
+    "tasks": "Tâches",
+    "completed": "Terminé",
+    "viewTask": "Voir la tâche",
+    "build": "Construire",
+    "featuresCount": "Fonctionnalités ({{count}})"
+  },
+  "feature": {
+    "priority": "Priorité",
+    "effort": "Effort",
+    "impact": "Impact",
+    "dependencies": "Dépendances",
+    "description": "Description",
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible",
+    "impactLabel": "Impact {{value}}",
+    "competitorInsight": "Analyse concurrentielle",
+    "goToTask": "Aller à la tâche",
+    "build": "Construire",
+    "convertToTask": "Convertir en tâche auto-build",
+    "deleteFeature": "Supprimer la fonctionnalité ?",
+    "deleteConfirm": "Ceci supprimera définitivement « {{title}} » de votre feuille de route.",
+    "userStories": "User Stories",
+    "acceptanceCriteria": "Critères d'acceptation",
+    "addressesCompetitorPainPoints": "Répond aux points faibles des concurrents",
+    "severityLabel": "Sévérité {{severity}}"
+  },
+  "competitor": {
+    "title": "Analyse concurrentielle",
+    "analysisResults": "Résultats de l'analyse concurrentielle",
+    "analyzedCompetitors": "{{count}} concurrents analysés pour identifier les lacunes et opportunités du marché",
+    "strengths": "Forces",
+    "weaknesses": "Faiblesses",
+    "painPoints": "Points faibles identifiés ({{count}})",
+    "noPainPoints": "Aucun point faible identifié",
+    "source": "Source",
+    "frequency": "Fréquence",
+    "opportunity": "Opportunité",
+    "topPainPoints": "Principaux points faibles",
+    "differentiatorOpportunities": "Opportunités de différenciation",
+    "marketTrends": "Tendances du marché",
+    "visit": "Visiter"
+  },
+  "kanban": {
+    "todo": "À faire",
+    "inProgress": "En cours",
+    "done": "Terminé",
+    "noFeatures": "Aucune fonctionnalité",
+    "dragFeaturesHere": "Glissez des fonctionnalités ici"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "title": "Ideation",
+  "emptyState": {
+    "title": "No Ideas Yet",
+    "description": "Generate AI-powered feature ideas based on your project's context, existing patterns, and target audience.",
+    "generate": "Generate Ideas"
+  },
+  "enabledTypes": "Enabled Ideation Types",
+  "configTitle": "Ideation Configuration",
+  "configDescription": "Configure which types of ideas to generate",
+  "types": "Ideation Types",
+  "contextSources": "Context Sources",
+  "includeRoadmap": "Include Roadmap Context",
+  "includeKanban": "Include Kanban Context",
+  "addMoreIdeas": "Add More Ideas",
+  "addMoreDescription": "Select additional ideation types to generate. Your existing ideas will be preserved.",
+  "allTypesGenerated": "You've already generated all ideation types!",
+  "useRegenerateHint": "Use \"Regenerate\" to refresh existing ideas.",
+  "generating": "Generating Ideas",
+  "stopGeneration": "Stop generation",
+  "authRequired": "Claude Authentication Required",
+  "authDescription": "A Claude Code OAuth token is required to generate AI-powered feature ideas.",
+  "tokenWarning": "Claude token not configured. You'll be prompted to enter it when generating.",
+  "header": {
+    "title": "Ideation",
+    "generate": "Generate Ideas",
+    "settings": "Settings",
+    "ideasCount": "{{count}} ideas",
+    "aiDescription": "AI-generated feature ideas for your project",
+    "selected": "{{count}} selected",
+    "addMore": "Add More"
+  },
+  "filters": {
+    "all": "All",
+    "codeImprovements": "Code",
+    "uiux": "UI/UX",
+    "documentation": "Docs",
+    "security": "Security",
+    "performance": "Performance"
+  },
+  "dialogs": {
+    "deleteTitle": "Delete Idea?",
+    "deleteDescription": "This action cannot be undone",
+    "convertTitle": "Convert to Task",
+    "generateTypes": "Generate {{count}} Types",
+    "generateIdeas": "Generate Ideas",
+    "close": "Close",
+    "cancel": "Cancel"
+  },
+  "progress": {
+    "analyzing": "Analyzing codebase...",
+    "generating": "Generating ideas...",
+    "step": "Step",
+    "complete": "complete",
+    "showLogs": "Show Logs",
+    "hideLogs": "Hide Logs",
+    "stopping": "Stopping...",
+    "waitingToStart": "Waiting to start...",
+    "failedToGenerate": "Failed to generate ideas for this category",
+    "noIdeasGenerated": "No ideas generated for this category",
+    "noIdeasToDisplay": "No ideas to display"
+  },
+  "details": {
+    "severity": "Severity",
+    "files": "Affected Files",
+    "compliance": "Compliance",
+    "impact": "Impact",
+    "effort": "Effort",
+    "category": "Category",
+    "priority": "Priority",
+    "breakingChange": "Breaking Change",
+    "metrics": "Metrics",
+    "lines": "Lines",
+    "complexity": "Complexity",
+    "duplicateLines": "Duplicate Lines",
+    "testCoverage": "Test Coverage",
+    "patternsToFollow": "Patterns to Follow",
+    "recommendation": "Recommendation",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low"
+  }
+}

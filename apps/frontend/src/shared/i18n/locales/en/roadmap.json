@@ -1,0 +1,89 @@
+{
+  "tabs": {
+    "kanban": "Kanban",
+    "phases": "Phases",
+    "allFeatures": "All Features",
+    "byPriority": "By Priority"
+  },
+  "clickToViewAnalysis": "Click to view detailed analysis",
+  "addFeatureTooltip": "Add a new feature to the roadmap",
+  "regenerateTooltip": "Regenerate Roadmap",
+  "emptyState": {
+    "title": "No Roadmap Yet",
+    "description": "Generate an AI-powered roadmap that understands your project's target audience and creates a strategic feature plan.",
+    "generate": "Generate Roadmap"
+  },
+  "progress": "Progress",
+  "milestones": "Milestones",
+  "description": "Description",
+  "rationale": "Rationale",
+  "complexity": "Complexity",
+  "impact": "Impact",
+  "dependencies": "Dependencies",
+  "competitorTooltip": "This feature addresses competitor pain points",
+  "marketInsightsSummary": "Market Insights Summary",
+  "dropHere": "Drop here",
+  "header": {
+    "title": "Roadmap",
+    "generate": "Generate Roadmap",
+    "lastGenerated": "Last generated",
+    "competitorAnalysis": "Competitor Analysis",
+    "addFeature": "Add Feature",
+    "target": "Target",
+    "features": "features",
+    "phases": "phases",
+    "morePersonas": "+{{count}} more personas",
+    "secondaryPersonas": "Secondary Personas"
+  },
+  "phase": {
+    "tasks": "Tasks",
+    "completed": "Completed",
+    "viewTask": "View Task",
+    "build": "Build",
+    "featuresCount": "Features ({{count}})"
+  },
+  "feature": {
+    "priority": "Priority",
+    "effort": "Effort",
+    "impact": "Impact",
+    "dependencies": "Dependencies",
+    "description": "Description",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "impactLabel": "{{value}} impact",
+    "competitorInsight": "Competitor Insight",
+    "goToTask": "Go to Task",
+    "build": "Build",
+    "convertToTask": "Convert to Auto-Build Task",
+    "deleteFeature": "Delete Feature?",
+    "deleteConfirm": "This will permanently remove \"{{title}}\" from your roadmap.",
+    "userStories": "User Stories",
+    "acceptanceCriteria": "Acceptance Criteria",
+    "addressesCompetitorPainPoints": "Addresses Competitor Pain Points",
+    "severityLabel": "{{severity}} severity"
+  },
+  "competitor": {
+    "title": "Competitor Analysis",
+    "analysisResults": "Competitor Analysis Results",
+    "analyzedCompetitors": "Analyzed {{count}} competitors to identify market gaps and opportunities",
+    "strengths": "Strengths",
+    "weaknesses": "Weaknesses",
+    "painPoints": "Identified Pain Points ({{count}})",
+    "noPainPoints": "No pain points identified",
+    "source": "Source",
+    "frequency": "Frequency",
+    "opportunity": "Opportunity",
+    "topPainPoints": "Top Pain Points",
+    "differentiatorOpportunities": "Differentiator Opportunities",
+    "marketTrends": "Market Trends",
+    "visit": "Visit"
+  },
+  "kanban": {
+    "todo": "To Do",
+    "inProgress": "In Progress",
+    "done": "Done",
+    "noFeatures": "No features",
+    "dragFeaturesHere": "Drag features here"
+  }
+}

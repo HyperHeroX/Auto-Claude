@@ -78,7 +78,7 @@ const isFilesTabEnabled = () => {
 
 // Separate component to use hooks only when task exists
 function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals, onOpenInbuiltTerminal }: { open: boolean; task: Task; onOpenChange: (open: boolean) => void; onSwitchToTerminals?: () => void; onOpenInbuiltTerminal?: (id: string, cwd: string) => void }) {
-  const { t } = useTranslation(['tasks']);
+  const { t } = useTranslation(['tasks', 'common']);
   const { toast } = useToast();
   const state = useTaskDetail({ task });
   const activeProject = useProjectStore(s => s.getActiveProject());
@@ -253,12 +253,12 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
           {state.isRecovering ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Recovering...
+              {t('labels.recovering')}
             </>
           ) : (
             <>
               <RotateCcw className="mr-2 h-4 w-4" />
-              Recover Task
+              {t('actions.recoverTask')}
             </>
           )}
         </Button>
@@ -271,12 +271,12 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
           {state.isLoadingPlan ? (
             <>
               <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-              Loading Plan...
+              {t('actions.loadingPlan')}
             </>
           ) : (
             <>
               <Play className="mr-2 h-4 w-4" />
-              Resume Task
+              {t('actions.resumeTask')}
             </>
           )}
         </Button>
@@ -292,12 +292,12 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
           {state.isRunning ? (
             <>
               <Square className="mr-2 h-4 w-4" />
-              Stop Task
+              {t('actions.stopTask')}
             </>
           ) : (
             <>
               <Play className="mr-2 h-4 w-4" />
-              Start Task
+              {t('actions.startTask')}
             </>
           )}
         </Button>
@@ -384,12 +384,12 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                       {state.isStuck ? (
                         <Badge variant="warning" className="text-xs flex items-center gap-1 animate-pulse">
                           <AlertTriangle className="h-3 w-3" />
-                          Stuck
+                          {t('labels.stuck')}
                         </Badge>
                       ) : state.isIncomplete ? (
                         <Badge variant="warning" className="text-xs flex items-center gap-1">
                             <AlertTriangle className="h-3 w-3" />
-                            Incomplete
+                            {t('labels.incomplete')}
                           </Badge>
                       ) : (
                         <>
@@ -404,10 +404,10 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                               variant={task.reviewReason === 'completed' ? 'success' : task.reviewReason === 'errors' ? 'destructive' : 'warning'}
                               className="text-xs"
                             >
-                              {task.reviewReason === 'completed' ? 'Completed' :
-                               task.reviewReason === 'errors' ? 'Has Errors' :
-                               task.reviewReason === 'plan_review' ? 'Approve Plan' :
-                               task.reviewReason === 'stopped' ? 'Stopped' : 'QA Issues'}
+                              {task.reviewReason === 'completed' ? t('reviewReason.completed') :
+                               task.reviewReason === 'errors' ? t('reviewReason.hasErrors') :
+                               task.reviewReason === 'plan_review' ? t('reviewReason.approvePlan') :
+                               task.reviewReason === 'stopped' ? t('reviewReason.stopped') : t('reviewReason.qaIssues')}
                             </Badge>
                           )}
                         </>
@@ -415,7 +415,7 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                       {/* Compact progress indicator */}
                       {totalSubtasks > 0 && (
                         <span className="text-xs text-muted-foreground ml-1">
-                          {completedSubtasks}/{totalSubtasks} subtasks
+                          {completedSubtasks}/{totalSubtasks} {t('subtasks.label')}
                         </span>
                       )}
                     </div>
@@ -445,7 +445,7 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                       className="hover:bg-muted transition-colors"
                     >
                       <X className="h-5 w-5" />
-                      <span className="sr-only">Close</span>
+                      <span className="sr-only">{t('common:buttons.close')}</span>
                     </Button>
                   </DialogPrimitive.Close>
                 </div>
@@ -482,19 +482,19 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                     value="overview"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-2.5 text-sm"
                   >
-                    Overview
+                    {t('tabs.overview')}
                   </TabsTrigger>
                   <TabsTrigger
                     value="subtasks"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-2.5 text-sm"
                   >
-                    Subtasks ({task.subtasks.length})
+                    {t('tabs.subtasks')} ({task.subtasks.length})
                   </TabsTrigger>
                   <TabsTrigger
                     value="logs"
                     className="rounded-none border-b-2 border-transparent data-[state=active]:border-primary data-[state=active]:bg-transparent data-[state=active]:shadow-none px-4 py-2.5 text-sm"
                   >
-                    Logs
+                    {t('tabs.logs')}
                   </TabsTrigger>
                   {showFilesTab && (
                     <TabsTrigger
@@ -601,12 +601,12 @@ function TaskDetailModalContent({ open, task, onOpenChange, onSwitchToTerminals,
                 disabled={state.isRunning && !state.isStuck}
               >
                 <Trash2 className="mr-2 h-4 w-4" />
-                Delete Task
+                {t('actions.deleteTask')}
               </Button>
               <div className="flex-1" />
               {renderPrimaryAction()}
               <Button variant="outline" onClick={handleClose}>
-                Close
+                {t('common:buttons.close')}
               </Button>
             </div>
           </DialogPrimitive.Content>

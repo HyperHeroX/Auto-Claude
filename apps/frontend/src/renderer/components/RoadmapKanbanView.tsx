@@ -18,6 +18,7 @@ import {
   verticalListSortingStrategy,
 } from '@dnd-kit/sortable';
 import { Plus, Inbox, Eye, Calendar, Play, Check } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { ScrollArea } from './ui/scroll-area';
 import { Badge } from './ui/badge';
 import { Card } from './ui/card';
@@ -48,6 +49,10 @@ interface DroppableStatusColumnProps {
   isOver: boolean;
 }
 
+function useKanbanTranslation() {
+  return useTranslation(['roadmap', 'common']);
+}
+
 // Get icon component for status
 function getStatusIcon(iconName: string) {
   switch (iconName) {
@@ -73,6 +78,7 @@ function DroppableStatusColumn({
   onGoToTask,
   isOver
 }: DroppableStatusColumnProps) {
+  const { t } = useKanbanTranslation();
   const { setNodeRef } = useDroppable({
     id: column.id
   });
@@ -135,16 +141,16 @@ function DroppableStatusColumn({
                       <div className="h-8 w-8 rounded-full bg-primary/20 flex items-center justify-center mb-2">
                         <Plus className="h-4 w-4 text-primary" />
                       </div>
-                      <span className="text-sm font-medium text-primary">Drop here</span>
+                      <span className="text-sm font-medium text-primary">{t('roadmap:dropHere')}</span>
                     </>
                   ) : (
                     <>
                       <Inbox className="h-6 w-6 text-muted-foreground/50" />
                       <span className="mt-2 text-sm font-medium text-muted-foreground/70">
-                        No features
+                        {t('roadmap:kanban.noFeatures')}
                       </span>
                       <span className="mt-0.5 text-xs text-muted-foreground/50">
-                        Drag features here
+                        {t('roadmap:kanban.dragFeaturesHere')}
                       </span>
                     </>
                   )}

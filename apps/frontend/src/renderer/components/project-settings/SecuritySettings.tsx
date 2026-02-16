@@ -7,6 +7,7 @@ import {
   ChevronUp,
   Globe
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
 import { Switch } from '../ui/switch';
@@ -46,6 +47,8 @@ export function SecuritySettings({
   expanded,
   onToggle
 }: SecuritySettingsProps) {
+  const { t } = useTranslation(['settings', 'common']);
+
   // Password visibility for multiple providers
   const [showApiKey, setShowApiKey] = useState<Record<string, boolean>>({
     openai: showOpenAIKey,
@@ -142,7 +145,7 @@ export function SecuritySettings({
     if (embeddingProvider === 'voyage') {
       return (
         <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Voyage AI API Key</Label>
+          <Label className="text-sm font-medium text-foreground">{t('settings:security.voyageApiKey')}</Label>
           <p className="text-xs text-muted-foreground">
             Required for Voyage AI embeddings
           </p>
@@ -197,7 +200,7 @@ export function SecuritySettings({
     if (embeddingProvider === 'google') {
       return (
         <div className="space-y-2">
-          <Label className="text-sm font-medium text-foreground">Google AI API Key</Label>
+          <Label className="text-sm font-medium text-foreground">{t('settings:security.googleApiKey')}</Label>
           <p className="text-xs text-muted-foreground">
             Required for Google AI embeddings
           </p>
@@ -238,9 +241,9 @@ export function SecuritySettings({
     if (embeddingProvider === 'azure_openai') {
       return (
         <div className="space-y-3 p-3 rounded-md bg-muted/50">
-          <Label className="text-sm font-medium text-foreground">Azure OpenAI Configuration</Label>
+          <Label className="text-sm font-medium text-foreground">{t('settings:security.azureConfig')}</Label>
           <div className="space-y-2">
-            <Label className="text-xs text-muted-foreground">API Key</Label>
+            <Label className="text-xs text-muted-foreground">{t('settings:security.apiKey')}</Label>
             <div className="relative">
               <Input
                 type={showApiKey['azure'] ? 'text' : 'password'}
@@ -266,7 +269,7 @@ export function SecuritySettings({
             </div>
           </div>
           <div className="space-y-1">
-            <Label className="text-xs text-muted-foreground">Base URL</Label>
+            <Label className="text-xs text-muted-foreground">{t('settings:security.baseUrl')}</Label>
             <Input
               placeholder="https://your-resource.openai.azure.com"
               value={envConfig.graphitiProviderConfig?.azureOpenaiBaseUrl || ''}
@@ -280,7 +283,7 @@ export function SecuritySettings({
             />
           </div>
           <div className="space-y-1">
-            <Label className="text-xs text-muted-foreground">Embedding Deployment Name</Label>
+            <Label className="text-xs text-muted-foreground">{t('settings:security.embeddingDeployment')}</Label>
             <Input
               placeholder="text-embedding-ada-002"
               value={envConfig.graphitiProviderConfig?.azureOpenaiEmbeddingDeployment || ''}
@@ -302,7 +305,7 @@ export function SecuritySettings({
       return (
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label className="text-xs text-muted-foreground">Base URL</Label>
+            <Label className="text-xs text-muted-foreground">{t('settings:security.baseUrl')}</Label>
             <Input
               placeholder="http://localhost:11434"
               value={envConfig.graphitiProviderConfig?.ollamaBaseUrl || 'http://localhost:11434'}
@@ -317,7 +320,7 @@ export function SecuritySettings({
           </div>
 
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-foreground">Select Embedding Model</Label>
+            <Label className="text-sm font-medium text-foreground">{t('settings:security.selectEmbeddingModel')}</Label>
             <OllamaModelSelector
               selectedModel={envConfig.graphitiProviderConfig?.ollamaEmbeddingModel || ''}
               baseUrl={envConfig.graphitiProviderConfig?.ollamaBaseUrl}
@@ -345,7 +348,7 @@ export function SecuritySettings({
               ? 'bg-success/10 text-success'
               : 'bg-muted text-muted-foreground'
           }`}>
-            {envConfig.graphitiEnabled ? 'Enabled' : 'Disabled'}
+            {envConfig.graphitiEnabled ? t('common:labels.enabled') : t('common:labels.disabled')}
           </span>
         </div>
         {expanded ? (
@@ -359,7 +362,7 @@ export function SecuritySettings({
         <div className="space-y-4 pl-6 pt-2">
           <div className="flex items-center justify-between">
             <div className="space-y-0.5">
-              <Label className="font-normal text-foreground">Enable Memory</Label>
+              <Label className="font-normal text-foreground">{t('settings:memory.enableMemory')}</Label>
               <p className="text-xs text-muted-foreground">
                 Persistent cross-session memory using LadybugDB (embedded database)
               </p>
@@ -387,7 +390,7 @@ export function SecuritySettings({
               {/* Graphiti MCP Server Toggle */}
               <div className="flex items-center justify-between">
                 <div className="space-y-0.5">
-                  <Label className="font-normal text-foreground">Enable Agent Memory Access</Label>
+                  <Label className="font-normal text-foreground">{t('settings:memory.enableAgentAccess')}</Label>
                   <p className="text-xs text-muted-foreground">
                     Allow agents to search and add to the knowledge graph via MCP
                   </p>
@@ -402,7 +405,7 @@ export function SecuritySettings({
 
               {settings.graphitiMcpEnabled && (
                 <div className="space-y-2 ml-6">
-                  <Label className="text-sm font-medium text-foreground">Graphiti MCP Server URL</Label>
+                  <Label className="text-sm font-medium text-foreground">{t('settings:memory.graphitiUrl')}</Label>
                   <p className="text-xs text-muted-foreground">
                     URL of the Graphiti MCP server for agent memory access
                   </p>
@@ -418,7 +421,7 @@ export function SecuritySettings({
 
               {/* Embedding Provider Selection */}
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-foreground">Embedding Provider</Label>
+                <Label className="text-sm font-medium text-foreground">{t('settings:memory.embeddingProvider')}</Label>
                 <p className="text-xs text-muted-foreground">
                   Provider for semantic search (optional - keyword search works without)
                 </p>
@@ -453,7 +456,7 @@ export function SecuritySettings({
 
               {/* Database Settings */}
               <div className="space-y-2">
-                <Label className="text-sm font-medium text-foreground">Database Name</Label>
+                <Label className="text-sm font-medium text-foreground">{t('settings:memory.databaseName')}</Label>
                 <p className="text-xs text-muted-foreground">
                   Stored in ~/.auto-claude/memories/
                 </p>

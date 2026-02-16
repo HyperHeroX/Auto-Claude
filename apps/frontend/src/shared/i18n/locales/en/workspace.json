@@ -1,0 +1,31 @@
+{
+  "createWorkspace": "Create Workspace",
+  "groupProjectsDesc": "Group related projects together to share context across tasks.",
+  "name": "Name",
+  "descriptionOptional": "Description (optional)",
+  "namePlaceholder": "My App Workspace",
+  "descriptionPlaceholder": "Backend, frontend, and mobile apps...",
+  "projects": "Projects",
+  "addProjectPlaceholder": "Add a project...",
+  "allProjectsAdded": "All projects have been added",
+  "noProjectsAvailable": "No projects available",
+  "workspaceNameRequired": "Workspace name is required",
+  "workspaceApiNotAvailable": "Workspace API not available",
+  "creating": "Creating...",
+  "roles": {
+    "backend": "Backend",
+    "backendDesc": "Server-side code",
+    "frontend": "Frontend",
+    "frontendDesc": "Client-side code",
+    "mobile": "Mobile",
+    "mobileDesc": "Mobile app code",
+    "shared": "Shared",
+    "sharedDesc": "Shared libraries",
+    "apiGateway": "API Gateway",
+    "apiGatewayDesc": "API routing layer",
+    "worker": "Worker",
+    "workerDesc": "Background jobs",
+    "other": "Other",
+    "otherDesc": "Other project type"
+  }
+}

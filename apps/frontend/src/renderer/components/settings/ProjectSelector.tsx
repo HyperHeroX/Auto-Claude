@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { FolderOpen, Plus, Trash2 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import {
   Select,
   SelectContent,
@@ -23,6 +24,7 @@ export function ProjectSelector({
   onProjectChange,
   onProjectAdded
 }: ProjectSelectorProps) {
+  const { t } = useTranslation(['settings']);
   const projects = useProjectStore((state) => state.projects);
   const [showAddModal, setShowAddModal] = useState(false);
   const [open, setOpen] = useState(false);
@@ -57,13 +59,13 @@ export function ProjectSelector({
         <SelectTrigger className="w-full [&_span]:truncate">
           <div className="flex items-center gap-2 min-w-0 flex-1 overflow-hidden">
             <FolderOpen className="h-4 w-4 shrink-0 text-muted-foreground" />
-            <SelectValue placeholder="Select a project..." className="truncate min-w-0 flex-1" />
+            <SelectValue placeholder={t('settings:project.selectPlaceholder')} className="truncate min-w-0 flex-1" />
           </div>
         </SelectTrigger>
         <SelectContent className="min-w-(--radix-select-trigger-width) max-w-(--radix-select-trigger-width)">
           {projects.length === 0 ? (
             <div className="px-2 py-4 text-center text-sm text-muted-foreground">
-              <p>No projects yet</p>
+              <p>{t('settings:project.noProjects')}</p>
             </div>
           ) : (
             projects.map((project) => (

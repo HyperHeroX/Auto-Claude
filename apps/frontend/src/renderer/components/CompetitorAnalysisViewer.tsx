@@ -22,7 +22,7 @@ export function CompetitorAnalysisViewer({
   open,
   onOpenChange,
 }: CompetitorAnalysisViewerProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['roadmap', 'common']);
 
   if (!analysis) return null;
 
@@ -32,10 +32,10 @@ export function CompetitorAnalysisViewer({
         <DialogHeader>
           <DialogTitle className="flex items-center gap-2">
             <TrendingUp className="h-5 w-5 text-primary" />
-            Competitor Analysis Results
+            {t('roadmap:competitor.analysisResults')}
           </DialogTitle>
           <DialogDescription>
-            Analyzed {analysis.competitors.length} competitors to identify market gaps and opportunities
+            {t('roadmap:competitor.analyzedCompetitors', { count: analysis.competitors.length })}
           </DialogDescription>
         </DialogHeader>
 
@@ -72,7 +72,7 @@ export function CompetitorAnalysisViewer({
                       aria-label={t('accessibility.visitExternalLink', { name: competitor.name })}
                     >
                       <ExternalLink className="h-3 w-3" aria-hidden="true" />
-                      Visit
+                      {t('roadmap:competitor.visit')}
                       <span className="sr-only">({t('accessibility.opensInNewWindow')})</span>
                     </a>
                   )}
@@ -82,12 +82,12 @@ export function CompetitorAnalysisViewer({
                 <div>
                   <h4 className="text-sm font-medium mb-2 flex items-center gap-2">
                     <AlertCircle className="h-4 w-4 text-warning" />
-                    Identified Pain Points ({competitor.painPoints.length})
+                    {t('roadmap:competitor.painPoints', { count: competitor.painPoints.length })}
                   </h4>
                   <div className="space-y-2">
                     {competitor.painPoints.length === 0 ? (
                       <p className="text-sm text-muted-foreground italic">
-                        No pain points identified
+                        {t('roadmap:competitor.noPainPoints')}
                       </p>
                     ) : (
                       competitor.painPoints.map((painPoint) => (
@@ -115,21 +115,21 @@ export function CompetitorAnalysisViewer({
                               {painPoint.source && (
                                 <div className="mt-2">
                                   <span className="text-xs text-muted-foreground">
-                                    Source: <span className="italic">{painPoint.source}</span>
+                                    {t('roadmap:competitor.source')}: <span className="italic">{painPoint.source}</span>
                                   </span>
                                 </div>
                               )}
                               {painPoint.frequency && (
                                 <div className="mt-1">
                                   <span className="text-xs text-muted-foreground">
-                                    Frequency: {painPoint.frequency}
+                                    {t('roadmap:competitor.frequency')}: {painPoint.frequency}
                                   </span>
                                 </div>
                               )}
                               {painPoint.opportunity && (
                                 <div className="mt-1">
                                   <span className="text-xs text-muted-foreground">
-                                    Opportunity:{' '}
+                                    {t('roadmap:competitor.opportunity')}:{' '}
                                     <span className="font-medium text-foreground">
                                       {painPoint.opportunity}
                                     </span>
@@ -149,11 +149,11 @@ export function CompetitorAnalysisViewer({
             {/* Insights Summary */}
             {analysis.insightsSummary && (
               <div className="rounded-lg bg-primary/5 border border-primary/20 p-4 space-y-3">
-                <h4 className="text-sm font-semibold">Market Insights Summary</h4>
+                <h4 className="text-sm font-semibold">{t('roadmap:marketInsightsSummary')}</h4>
 
                 {analysis.insightsSummary.topPainPoints.length > 0 && (
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-1">Top Pain Points:</p>
+                    <p className="text-xs font-medium text-muted-foreground mb-1">{t('roadmap:competitor.topPainPoints')}:</p>
                     <ul className="text-sm space-y-1">
                       {analysis.insightsSummary.topPainPoints.map((point, idx) => (
                         <li key={idx} className="text-muted-foreground">• {point}</li>
@@ -164,7 +164,7 @@ export function CompetitorAnalysisViewer({
 
                 {analysis.insightsSummary.differentiatorOpportunities.length > 0 && (
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-1">Differentiator Opportunities:</p>
+                    <p className="text-xs font-medium text-muted-foreground mb-1">{t('roadmap:competitor.differentiatorOpportunities')}:</p>
                     <ul className="text-sm space-y-1">
                       {analysis.insightsSummary.differentiatorOpportunities.map((opp, idx) => (
                         <li key={idx} className="text-muted-foreground">• {opp}</li>
@@ -175,7 +175,7 @@ export function CompetitorAnalysisViewer({
 
                 {analysis.insightsSummary.marketTrends.length > 0 && (
                   <div>
-                    <p className="text-xs font-medium text-muted-foreground mb-1">Market Trends:</p>
+                    <p className="text-xs font-medium text-muted-foreground mb-1">{t('roadmap:competitor.marketTrends')}:</p>
                     <ul className="text-sm space-y-1">
                       {analysis.insightsSummary.marketTrends.map((trend, idx) => (
                         <li key={idx} className="text-muted-foreground">• {trend}</li>

@@ -1,4 +1,5 @@
 import { Key, ExternalLink, Loader2, Globe } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { CollapsibleSection } from './CollapsibleSection';
 import { StatusBadge } from './StatusBadge';
 import { PasswordInput } from './PasswordInput';
@@ -29,6 +30,8 @@ export function ClaudeAuthSection({
   onClaudeSetup,
   onUpdateConfig,
 }: ClaudeAuthSectionProps) {
+  const { t } = useTranslation(['settings']);
+
   const badge = authStatus === 'authenticated' ? (
     <StatusBadge status="success" label="Connected" />
   ) : authStatus === 'not_authenticated' ? (
@@ -37,7 +40,7 @@ export function ClaudeAuthSection({
 
   return (
     <CollapsibleSection
-      title="Claude Authentication"
+      title={t('settings:claudeAuth.title')}
       icon={<Key className="h-4 w-4" />}
       isExpanded={isExpanded}
       onToggle={onToggle}
@@ -54,7 +57,7 @@ export function ClaudeAuthSection({
           <div className="rounded-lg border border-border bg-muted/30 p-3">
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm font-medium text-foreground">Claude CLI</p>
+                <p className="text-sm font-medium text-foreground">{t('settings:claudeAuth.claudeCli')}</p>
                 <p className="text-xs text-muted-foreground">
                   {isCheckingAuth ? 'Checking...' :
                     authStatus === 'authenticated' ? 'Authenticated via OAuth' :

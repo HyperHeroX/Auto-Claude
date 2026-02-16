@@ -55,7 +55,7 @@ export function GeneralSettings({
             <div className="flex items-start gap-3">
               <AlertCircle className="h-5 w-5 text-warning mt-0.5 shrink-0" />
               <div className="flex-1">
-                <p className="text-sm font-medium text-foreground">Not Initialized</p>
+                <p className="text-sm font-medium text-foreground">{t('settings:project.notInitialized')}</p>
                 <p className="text-xs text-muted-foreground mt-1">
                   Initialize Auto-Build to enable task creation and agent workflows.
                 </p>
@@ -85,7 +85,7 @@ export function GeneralSettings({
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-2">
                 <CheckCircle2 className="h-4 w-4 text-success" />
-                <span className="text-sm font-medium text-foreground">Initialized</span>
+                <span className="text-sm font-medium text-foreground">{t('settings:project.initialized')}</span>
               </div>
               <code className="text-xs bg-background px-2 py-1 rounded">
                 {project.autoBuildPath}
@@ -98,7 +98,7 @@ export function GeneralSettings({
               </div>
             ) : versionInfo && (
               <div className="text-xs text-muted-foreground">
-                {versionInfo.isInitialized ? 'Initialized' : 'Not initialized'}
+                {versionInfo.isInitialized ? t('settings:project.initialized') : t('settings:project.notInitialized')}
               </div>
             )}
           </div>
@@ -111,9 +111,9 @@ export function GeneralSettings({
 
           {/* Agent Settings */}
           <section className="space-y-4">
-            <h3 className="text-sm font-semibold text-foreground">Agent Configuration</h3>
+            <h3 className="text-sm font-semibold text-foreground">{t('settings:agentConfig.title')}</h3>
             <div className="space-y-2">
-              <Label htmlFor="model" className="text-sm font-medium text-foreground">Model</Label>
+              <Label htmlFor="model" className="text-sm font-medium text-foreground">{t('settings:agentConfig.model')}</Label>
               <Select
                 value={settings.model}
                 onValueChange={(value) => setSettings({ ...settings, model: value })}
@@ -152,10 +152,10 @@ export function GeneralSettings({
 
           {/* Notifications */}
           <section className="space-y-4">
-            <h3 className="text-sm font-semibold text-foreground">Notifications</h3>
+            <h3 className="text-sm font-semibold text-foreground">{t('settings:notifications.title')}</h3>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
-                <Label className="font-normal text-foreground">On Task Complete</Label>
+                <Label className="font-normal text-foreground">{t('settings:notifications.onTaskComplete')}</Label>
                 <Switch
                   checked={settings.notifications.onTaskComplete}
                   onCheckedChange={(checked) =>
@@ -170,7 +170,7 @@ export function GeneralSettings({
                 />
               </div>
               <div className="flex items-center justify-between">
-                <Label className="font-normal text-foreground">On Task Failed</Label>
+                <Label className="font-normal text-foreground">{t('settings:notifications.onTaskFailed')}</Label>
                 <Switch
                   checked={settings.notifications.onTaskFailed}
                   onCheckedChange={(checked) =>
@@ -185,7 +185,7 @@ export function GeneralSettings({
                 />
               </div>
               <div className="flex items-center justify-between">
-                <Label className="font-normal text-foreground">On Review Needed</Label>
+                <Label className="font-normal text-foreground">{t('settings:notifications.onReviewNeeded')}</Label>
                 <Switch
                   checked={settings.notifications.onReviewNeeded}
                   onCheckedChange={(checked) =>
@@ -200,7 +200,7 @@ export function GeneralSettings({
                 />
               </div>
               <div className="flex items-center justify-between">
-                <Label className="font-normal text-foreground">Sound</Label>
+                <Label className="font-normal text-foreground">{t('settings:notifications.sound')}</Label>
                 <Switch
                   checked={settings.notifications.sound}
                   onCheckedChange={(checked) =>

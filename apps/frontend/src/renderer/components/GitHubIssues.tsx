@@ -1,4 +1,5 @@
 import { useState, useCallback, useMemo, useEffect } from "react";
+import { useTranslation } from 'react-i18next';
 import { useProjectStore } from "../stores/project-store";
 import { useTaskStore } from "../stores/task-store";
 import {
@@ -87,6 +88,7 @@ export function GitHubIssues({ onOpenSettings, onNavigateToTask }: GitHubIssuesP
   const [showInvestigateDialog, setShowInvestigateDialog] = useState(false);
   const [selectedIssueForInvestigation, setSelectedIssueForInvestigation] =
     useState<GitHubIssue | null>(null);
+  const { t } = useTranslation('github');
   const [showGitHubSetup, setShowGitHubSetup] = useState(false);
 
   // Show GitHub setup modal when module is not installed
@@ -197,7 +199,7 @@ export function GitHubIssues({ onOpenSettings, onNavigateToTask }: GitHubIssuesP
               autoFixQueueItem={getAutoFixQueueItem(selectedIssue.number)}
             />
           ) : (
-            <EmptyState message="Select an issue to view details" />
+            <EmptyState message={t('issues.selectIssue')} />
           )}
         </div>
       </div>

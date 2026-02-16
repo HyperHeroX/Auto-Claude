@@ -1,4 +1,5 @@
 import { ExternalLink, Play, TrendingUp } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { TaskOutcomeBadge, getTaskOutcomeColorClass } from './TaskOutcomeBadge';
 import { Badge } from '../ui/badge';
 import { Button } from '../ui/button';
@@ -19,6 +20,7 @@ export function FeatureCard({
   onGoToTask,
   hasCompetitorInsight = false,
 }: FeatureCardProps) {
+  const { t } = useTranslation(['roadmap', 'common']);
 
   return (
     <Card className="p-4 hover:bg-muted/50 cursor-pointer transition-colors" onClick={onClick}>
@@ -38,17 +40,17 @@ export function FeatureCard({
               variant="outline"
               className={`text-xs ${ROADMAP_IMPACT_COLORS[feature.impact]}`}
             >
-              {feature.impact} impact
+              {feature.impact} {t('roadmap:impact')}
             </Badge>
             {hasCompetitorInsight && (
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Badge variant="outline" className="text-xs text-primary border-primary/50">
                     <TrendingUp className="h-3 w-3 mr-1" />
-                    Competitor Insight
+                    {t('roadmap:feature.competitorInsight')}
                   </Badge>
                 </TooltipTrigger>
-                <TooltipContent>This feature addresses competitor pain points</TooltipContent>
+                <TooltipContent>{t('roadmap:competitorTooltip')}</TooltipContent>
               </Tooltip>
             )}
           </div>
@@ -69,7 +71,7 @@ export function FeatureCard({
             }}
           >
             <ExternalLink className="h-3 w-3 mr-1" />
-            Go to Task
+            {t('roadmap:feature.goToTask')}
           </Button>
         ) : (
           feature.status !== 'done' && (
@@ -82,7 +84,7 @@ export function FeatureCard({
               }}
             >
               <Play className="h-3 w-3 mr-1" />
-              Build
+              {t('roadmap:phase.build')}
             </Button>
           )
         )}

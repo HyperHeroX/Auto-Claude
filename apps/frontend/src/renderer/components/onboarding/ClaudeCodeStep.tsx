@@ -125,7 +125,7 @@ export function ClaudeCodeStep({ onNext, onBack, onSkip }: ClaudeCodeStepProps) 
       case 'not-found':
         return t('claudeCode.status.notFound', 'Not Installed');
       case 'error':
-        return error || 'Error checking status';
+        return error || t('claudeCode.status.error', 'Error checking status');
     }
   };
 
@@ -205,7 +205,7 @@ export function ClaudeCodeStep({ onNext, onBack, onSkip }: ClaudeCodeStepProps) 
                         )}
                         {versionInfo.path && (
                           <p className="truncate max-w-md" title={versionInfo.path}>
-                            Path: <span className="font-mono">{versionInfo.path}</span>
+                            {t('claudeCode.version.path', 'Path')}: <span className="font-mono">{versionInfo.path}</span>
                           </p>
                         )}
                       </div>

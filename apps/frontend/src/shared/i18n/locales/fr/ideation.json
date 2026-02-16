@@ -1,0 +1,83 @@
+{
+  "title": "Idéation",
+  "emptyState": {
+    "title": "Pas encore d'idées",
+    "description": "Générez des idées de fonctionnalités alimentées par l'IA basées sur le contexte de votre projet, les patterns existants et le public cible.",
+    "generate": "Générer des idées"
+  },
+  "enabledTypes": "Types d'idéation activés",
+  "configTitle": "Configuration d'idéation",
+  "configDescription": "Configurez les types d'idées à générer",
+  "types": "Types d'idéation",
+  "contextSources": "Sources de contexte",
+  "includeRoadmap": "Inclure le contexte de la feuille de route",
+  "includeKanban": "Inclure le contexte du Kanban",
+  "addMoreIdeas": "Ajouter plus d'idées",
+  "addMoreDescription": "Sélectionnez des types d'idéation supplémentaires à générer. Vos idées existantes seront préservées.",
+  "allTypesGenerated": "Vous avez déjà généré tous les types d'idéation !",
+  "useRegenerateHint": "Utilisez « Régénérer » pour actualiser les idées existantes.",
+  "generating": "Génération d'idées",
+  "stopGeneration": "Arrêter la génération",
+  "authRequired": "Authentification Claude requise",
+  "authDescription": "Un jeton OAuth Claude Code est nécessaire pour générer des idées de fonctionnalités basées sur l'IA.",
+  "tokenWarning": "Jeton Claude non configuré. Vous serez invité à le saisir lors de la génération.",
+  "header": {
+    "title": "Idéation",
+    "generate": "Générer des idées",
+    "settings": "Paramètres",
+    "ideasCount": "{{count}} idées",
+    "aiDescription": "Idées de fonctionnalités générées par l'IA pour votre projet",
+    "selected": "{{count}} sélectionnée(s)",
+    "addMore": "Ajouter plus"
+  },
+  "filters": {
+    "all": "Tout",
+    "codeImprovements": "Code",
+    "uiux": "UI/UX",
+    "documentation": "Docs",
+    "security": "Sécurité",
+    "performance": "Performance"
+  },
+  "dialogs": {
+    "deleteTitle": "Supprimer l'idée ?",
+    "deleteDescription": "Cette action est irréversible",
+    "convertTitle": "Convertir en tâche",
+    "generateTypes": "Générer {{count}} types",
+    "generateIdeas": "Générer des idées",
+    "close": "Fermer",
+    "cancel": "Annuler"
+  },
+  "progress": {
+    "analyzing": "Analyse du code source...",
+    "generating": "Génération des idées...",
+    "step": "Étape",
+    "complete": "terminé",
+    "showLogs": "Afficher les logs",
+    "hideLogs": "Masquer les logs",
+    "stopping": "Arrêt en cours...",
+    "waitingToStart": "En attente de démarrage...",
+    "failedToGenerate": "Échec de la génération d'idées pour cette catégorie",
+    "noIdeasGenerated": "Aucune idée générée pour cette catégorie",
+    "noIdeasToDisplay": "Aucune idée à afficher"
+  },
+  "details": {
+    "severity": "Sévérité",
+    "files": "Fichiers concernés",
+    "compliance": "Conformité",
+    "impact": "Impact",
+    "effort": "Effort",
+    "category": "Catégorie",
+    "priority": "Priorité",
+    "breakingChange": "Changement majeur",
+    "metrics": "Métriques",
+    "lines": "Lignes",
+    "complexity": "Complexité",
+    "duplicateLines": "Lignes en double",
+    "testCoverage": "Couverture de tests",
+    "patternsToFollow": "Patterns à suivre",
+    "recommendation": "Recommandation",
+    "high": "Élevé",
+    "medium": "Moyen",
+    "low": "Faible"
+  }
+}

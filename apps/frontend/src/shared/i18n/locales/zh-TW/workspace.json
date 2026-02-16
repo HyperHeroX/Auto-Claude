@@ -1,0 +1,31 @@
+{
+  "createWorkspace": "建立工作區",
+  "groupProjectsDesc": "將相關專案分組，以在任務之間共享上下文。",
+  "name": "名稱",
+  "descriptionOptional": "描述（選填）",
+  "namePlaceholder": "我的應用程式工作區",
+  "descriptionPlaceholder": "後端、前端和行動應用程式...",
+  "projects": "專案",
+  "addProjectPlaceholder": "新增專案...",
+  "allProjectsAdded": "所有專案都已新增",
+  "noProjectsAvailable": "沒有可用的專案",
+  "workspaceNameRequired": "工作區名稱為必填",
+  "workspaceApiNotAvailable": "工作區 API 不可用",
+  "creating": "建立中...",
+  "roles": {
+    "backend": "後端",
+    "backendDesc": "API 伺服器、服務",
+    "frontend": "前端",
+    "frontendDesc": "網頁應用程式",
+    "mobile": "行動端",
+    "mobileDesc": "行動應用程式",
+    "shared": "共用",
+    "sharedDesc": "共用型別/工具",
+    "api": "API 閘道",
+    "apiDesc": "閘道、BFF",
+    "worker": "Worker",
+    "workerDesc": "背景任務",
+    "other": "其他",
+    "otherDesc": "其他專案類型"
+  }
+}

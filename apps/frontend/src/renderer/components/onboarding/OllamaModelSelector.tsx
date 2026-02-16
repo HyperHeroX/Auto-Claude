@@ -315,7 +315,7 @@ export function OllamaModelSelector({
     return (
       <div className={cn('flex items-center justify-center py-8', className)}>
         <Loader2 className="h-5 w-5 animate-spin text-muted-foreground" />
-        <span className="ml-2 text-sm text-muted-foreground">Checking Ollama models...</span>
+        <span className="ml-2 text-sm text-muted-foreground">{t('ollama.checkingModels')}</span>
       </div>
     );
   }
@@ -484,22 +484,22 @@ export function OllamaModelSelector({
                        </span>
                        {model.badge === 'recommended' && (
                          <span className="inline-flex items-center rounded-full bg-primary/15 px-2 py-0.5 text-xs font-medium text-primary">
-                           Recommended
+                           {t('ollama.badges.recommended')}
                          </span>
                        )}
                        {model.badge === 'quality' && (
                          <span className="inline-flex items-center rounded-full bg-violet-500/15 px-2 py-0.5 text-xs font-medium text-violet-600 dark:text-violet-400">
-                           Highest Quality
+                           {t('ollama.badges.quality')}
                          </span>
                        )}
                        {model.badge === 'fast' && (
                          <span className="inline-flex items-center rounded-full bg-amber-500/15 px-2 py-0.5 text-xs font-medium text-amber-600 dark:text-amber-400">
-                           Fastest
+                           {t('ollama.badges.fast')}
                          </span>
                        )}
                        {model.installed && (
                          <span className="inline-flex items-center rounded-full bg-success/10 px-2 py-0.5 text-xs text-success">
-                           Installed
+                           {t('ollama.badges.installed')}
                          </span>
                        )}
                      </div>
@@ -522,12 +522,12 @@ export function OllamaModelSelector({
                      {isCurrentlyDownloading ? (
                        <>
                          <Loader2 className="h-3.5 w-3.5 animate-spin mr-1.5" />
-                         Downloading...
+                         {t('ollama.downloadingModel')}
                        </>
                      ) : (
                        <>
                          <Download className="h-3.5 w-3.5 mr-1.5" />
-                         Download
+                         {t('ollama.download')}
                          {model.size_estimate && (
                            <span className="ml-1 text-muted-foreground">
                              ({model.size_estimate})
@@ -557,7 +557,7 @@ export function OllamaModelSelector({
                    {/* Progress info: percentage, speed, time remaining */}
                    <div className="flex items-center justify-between text-xs text-muted-foreground">
                      <span className="font-medium text-foreground">
-                       {progress && progress.percentage > 0 ? `${Math.round(progress.percentage)}%` : 'Starting download...'}
+                       {progress && progress.percentage > 0 ? `${Math.round(progress.percentage)}%` : t('ollama.startingDownload')}
                      </span>
                      <div className="flex items-center gap-2">
                        {progress?.speed && <span>{progress.speed}</span>}
@@ -572,7 +572,7 @@ export function OllamaModelSelector({
        </div>
 
       <p className="text-xs text-muted-foreground">
-        Select an installed model for semantic search. Memory works with keyword search even without embeddings.
+        {t('ollama.modelHint')}
       </p>
     </div>
   );

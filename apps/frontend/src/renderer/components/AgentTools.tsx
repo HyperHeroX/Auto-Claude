@@ -473,7 +473,7 @@ function AgentCard({ id, config, modelLabel, thinkingLabel, overrides, mcpServer
           <div>
             <div className="flex items-center justify-between mb-2">
               <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider">
-                MCP Servers
+                {t('mcp.mcpServersLabel')}
               </h4>
               {availableMcps.length > 0 && (
                 <button
@@ -556,7 +556,7 @@ function AgentCard({ id, config, modelLabel, thinkingLabel, overrides, mcpServer
           {/* Tools */}
           <div>
             <h4 className="text-xs font-medium text-muted-foreground uppercase tracking-wider mb-2">
-              Available Tools
+              {t('mcp.availableTools')}
             </h4>
             {config.tools.length > 0 ? (
               <div className="flex flex-wrap gap-1.5">
@@ -570,7 +570,7 @@ function AgentCard({ id, config, modelLabel, thinkingLabel, overrides, mcpServer
                 ))}
               </div>
             ) : (
-              <p className="text-sm text-muted-foreground">Text-only (no tools)</p>
+              <p className="text-sm text-muted-foreground">{t('mcp.textOnlyNoTools')}</p>
             )}
           </div>
         </div>
@@ -1028,10 +1028,10 @@ export function AgentTools() {
           </div>
           <div className="flex-1">
             <div className="flex items-center gap-2">
-              <h1 className="text-xl font-semibold text-foreground">MCP Server Overview</h1>
+              <h1 className="text-xl font-semibold text-foreground">{t('settings:mcp.title')}</h1>
               {selectedProject && (
                 <span className="text-sm text-muted-foreground">
-                  for {selectedProject.name}
+                  {t('settings:mcp.forProject', { name: selectedProject.name })}
                 </span>
               )}
             </div>
@@ -1272,14 +1272,14 @@ export function AgentTools() {
                                 onClick={() => handleTestConnection(server)}
                                 disabled={isTesting}
                                 className="h-7 px-2 text-xs"
-                                title="Test Connection"
+                                title={t('settings:mcp.testConnectionTitle')}
                               >
                                 {isTesting ? (
                                   <Loader2 className="h-3 w-3 animate-spin" />
                                 ) : (
                                   <RefreshCw className="h-3 w-3" />
                                 )}
-                                <span className="ml-1">Test</span>
+                                <span className="ml-1">{t('settings:mcp.testLabel')}</span>
                               </Button>
                               {/* Edit/Delete - show on hover */}
                               <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -1287,7 +1287,7 @@ export function AgentTools() {
                                   type="button"
                                   onClick={() => { setEditingCustomServer(server); setShowCustomMcpDialog(true); }}
                                   className="p-1.5 text-muted-foreground hover:text-foreground transition-colors"
-                                  title="Edit"
+                                  title={t('settings:mcp.editServer')}
                                 >
                                   <Pencil className="h-3.5 w-3.5" />
                                 </button>
@@ -1295,7 +1295,7 @@ export function AgentTools() {
                                   type="button"
                                   onClick={() => handleDeleteCustomServer(server.id)}
                                   className="p-1.5 text-muted-foreground hover:text-destructive transition-colors"
-                                  title="Delete"
+                                  title={t('settings:mcp.deleteServer')}
                                 >
                                   <Trash2 className="h-3.5 w-3.5" />
                                 </button>
@@ -1341,7 +1341,7 @@ export function AgentTools() {
                     {category.label}
                   </h2>
                   <span className="text-xs text-muted-foreground">
-                    ({agents.length} agents)
+                    ({t('settings:mcp.agentCount', { count: agents.length })})
                   </span>
                 </button>
 

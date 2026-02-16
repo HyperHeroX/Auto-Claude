@@ -169,10 +169,10 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
         <div className="flex items-center gap-4 text-xs text-muted-foreground">
           <span className="flex items-center gap-1.5">
             <Clock className="h-3 w-3" />
-            Created {formatRelativeTime(task.createdAt)}
+            {t('metadata.created', { time: formatRelativeTime(task.createdAt) })}
           </span>
           <span className="text-border">•</span>
-          <span>Updated {formatRelativeTime(task.updatedAt)}</span>
+          <span>{t('metadata.updated', { time: formatRelativeTime(task.updatedAt) })}</span>
         </div>
       </div>
 
@@ -237,7 +237,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <Lightbulb className="h-3 w-3 text-warning" />
-                Rationale
+                {t('metadata.rationale')}
               </h3>
               <p className="text-sm text-foreground/80">{task.metadata.rationale}</p>
             </div>
@@ -248,7 +248,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <Target className="h-3 w-3 text-success" />
-                Problem Solved
+                {t('metadata.problemSolved')}
               </h3>
               <p className="text-sm text-foreground/80">{task.metadata.problemSolved}</p>
             </div>
@@ -259,7 +259,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <Users className="h-3 w-3 text-info" />
-                Target Audience
+                {t('metadata.targetAudience')}
               </h3>
               <p className="text-sm text-foreground/80">{task.metadata.targetAudience}</p>
             </div>
@@ -270,7 +270,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <GitBranch className="h-3 w-3 text-purple-400" />
-                Dependencies
+                {t('metadata.dependencies')}
               </h3>
               <ul className="text-sm text-foreground/80 list-disc list-inside space-y-0.5">
                 {task.metadata.dependencies.map((dep, idx) => (
@@ -307,7 +307,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <ListChecks className="h-3 w-3 text-success" />
-                Acceptance Criteria
+                {t('metadata.acceptanceCriteria')}
               </h3>
               <ul className="text-sm text-foreground/80 list-disc list-inside space-y-0.5">
                 {task.metadata.acceptanceCriteria.map((criteria, idx) => (
@@ -322,7 +322,7 @@ export function TaskMetadata({ task }: TaskMetadataProps) {
             <div>
               <h3 className="text-xs font-medium text-muted-foreground uppercase tracking-wide mb-1.5 flex items-center gap-1.5">
                 <FileCode className="h-3 w-3" />
-                Affected Files
+                {t('metadata.affectedFiles')}
               </h3>
               <div className="flex flex-wrap gap-1">
                 {task.metadata.affectedFiles.map((file, idx) => (

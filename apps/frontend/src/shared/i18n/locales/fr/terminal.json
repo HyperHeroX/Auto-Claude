@@ -46,5 +46,32 @@
     "detached": "(détaché)",
     "remotePushFailed": "Suivi distant non configure",
     "remotePushFailedDescription": "Le worktree a ete cree mais la branche n'a pas pu etre poussee vers le depot distant. Vous devrez peut-etre executer git push -u manuellement."
+  },
+  "dropToInsertPath": "Déposer pour insérer le chemin",
+  "title": {
+    "doubleClickToRename": "Double-cliquez pour renommer"
+  },
+  "taskSelector": {
+    "selectTask": "Sélectionner la tâche...",
+    "currentTask": "Tâche actuelle",
+    "switchTo": "Passer à...",
+    "clearTask": "Effacer la tâche",
+    "availableTasks": "Tâches disponibles",
+    "addNewTask": "Ajouter une nouvelle tâche",
+    "noTasksAvailable": "Aucune tâche disponible",
+    "createInKanban": "Créez des tâches dans le tableau Kanban"
+  },
+  "grid": {
+    "title": "Terminaux Agent",
+    "description": "Gérez jusqu'à 12 terminaux IA en parallèle avec injection de contexte de tâche",
+    "newTerminal": "Nouveau Terminal",
+    "terminalCount": "{{count}} terminaux",
+    "history": "Historique",
+    "restoreSessions": "Restaurer les sessions depuis la dernière utilisation",
+    "sessionCount": "{{count}} session",
+    "sessionCount_plural": "{{count}} sessions",
+    "invokeClaudeAll": "Invoquer Claude Tous",
+    "files": "Fichiers",
+    "defaultTitle": "Terminal"
   }
 }

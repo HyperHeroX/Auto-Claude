@@ -20,6 +20,7 @@
   },
   "empty": {
     "noMatch": "Aucune issue ne correspond à votre recherche",
+    "noIssues": "Aucune issue trouvée",
     "selectIssue": "Sélectionnez une issue pour voir les détails"
   },
   "notConnected": {
@@ -36,7 +37,8 @@
     "description": "Description",
     "noDescription": "Aucune description fournie.",
     "assignees": "Assignés",
-    "milestone": "Jalon"
+    "milestone": "Jalon",
+    "investigateIssue": "Investiguer l'issue"
   },
   "investigation": {
     "title": "Créer une tâche à partir de l'issue",
@@ -214,5 +216,16 @@
       "performance": "Performance",
       "logic": "Logique"
     }
+  },
+  "mr": {
+    "reviewFailed": "Échec de la revue",
+    "description": "Description",
+    "labels": "Libellés",
+    "title": "Titre",
+    "titlePlaceholder": "Titre de la merge request",
+    "sourceBranch": "Branche source",
+    "targetBranch": "Branche cible",
+    "descriptionPlaceholder": "Décrivez les changements...",
+    "searchPlaceholder": "Rechercher des merge requests..."
   }
 }

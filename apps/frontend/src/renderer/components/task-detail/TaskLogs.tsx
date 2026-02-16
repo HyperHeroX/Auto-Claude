@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 import {
   Terminal,
   Loader2,
@@ -38,9 +39,9 @@ interface TaskLogsProps {
 }
 
 const PHASE_LABELS: Record<TaskLogPhase, string> = {
-  planning: 'Planning',
-  coding: 'Coding',
-  validation: 'Validation'
+  planning: 'logs.phases.planning',
+  coding: 'logs.phases.coding',
+  validation: 'logs.phases.validation'
 };
 
 const PHASE_ICONS: Record<TaskLogPhase, typeof Pencil> = {
@@ -120,6 +121,7 @@ export function TaskLogs({
   onLogsScroll,
   onTogglePhase
 }: TaskLogsProps) {
+  const { t } = useTranslation('tasks');
   return (
     <div
       ref={logsContainerRef}
@@ -156,8 +158,8 @@ export function TaskLogs({
         ) : (
           <div className="text-center text-sm text-muted-foreground py-8">
             <Terminal className="mx-auto mb-2 h-8 w-8 opacity-50" />
-            <p>No logs yet</p>
-            <p className="text-xs mt-1">Logs will appear here when the task runs</p>
+            <p>{t('logs.noLogs')}</p>
+            <p className="text-xs mt-1">{t('logs.logsWillAppear')}</p>
           </div>
         )}
       </div>
@@ -176,6 +178,7 @@ interface PhaseLogSectionProps {
 }
 
 function PhaseLogSection({ phase, phaseLog, isExpanded, onToggle, isTaskStuck, phaseConfig }: PhaseLogSectionProps) {
+  const { t } = useTranslation('tasks');
   const Icon = PHASE_ICONS[phase];
   const logOrder = useSettingsStore(s => s.settings.logOrder);
   const status = phaseLog?.status || 'pending';
@@ -195,34 +198,34 @@ function PhaseLogSection({ phase, phaseLog, isExpanded, onToggle, isTaskStuck, p
           return (
             <Badge variant="outline" className="text-xs bg-warning/10 text-warning border-warning/30 flex items-center gap-1">
               <AlertTriangle className="h-3 w-3" />
-              Interrupted
+              {t('execution.labels.interrupted')}
             </Badge>
           );
         }
         return (
           <Badge variant="outline" className="text-xs bg-info/10 text-info border-info/30 flex items-center gap-1">
             <Loader2 className="h-3 w-3 animate-spin" />
-            Running
+            {t('logs.statusBadge.running')}
           </Badge>
         );
       case 'completed':
         return (
           <Badge variant="outline" className="text-xs bg-success/10 text-success border-success/30 flex items-center gap-1">
             <CheckCircle2 className="h-3 w-3" />
-            Complete
+            {t('logs.statusBadge.complete')}
           </Badge>
         );
       case 'failed':
         return (
           <Badge variant="outline" className="text-xs bg-destructive/10 text-destructive border-destructive/30 flex items-center gap-1">
             <XCircle className="h-3 w-3" />
-            Failed
+            {t('logs.statusBadge.failed')}
           </Badge>
         );
       default:
         return (
           <Badge variant="secondary" className="text-xs text-muted-foreground">
-            Pending
+            {t('logs.statusBadge.pending')}
           </Badge>
         );
     }
@@ -251,10 +254,10 @@ function PhaseLogSection({ phase, phaseLog, isExpanded, onToggle, isTaskStuck, p
               <ChevronRight className="h-4 w-4 text-muted-foreground" />
             )}
             <Icon className={cn('h-4 w-4', isInterrupted ? 'text-warning' : status === 'active' ? PHASE_COLORS[phase].split(' ')[0] : 'text-muted-foreground')} />
-            <span className="font-medium text-sm">{PHASE_LABELS[phase]}</span>
+            <span className="font-medium text-sm">{t(PHASE_LABELS[phase])}</span>
             {hasEntries && (
               <span className="text-xs text-muted-foreground">
-                ({phaseLog?.entries.length} entries)
+                ({phaseLog?.entries.length} {(phaseLog?.entries.length || 0) === 1 ? t('execution.labels.entry') : t('execution.labels.entries')})
               </span>
             )}
           </div>
@@ -280,7 +283,7 @@ function PhaseLogSection({ phase, phaseLog, isExpanded, onToggle, isTaskStuck, p
       <CollapsibleContent>
         <div className="mt-1 ml-6 border-l-2 border-border pl-4 py-2 space-y-1">
           {!hasEntries ? (
-            <p className="text-xs text-muted-foreground italic">No logs yet</p>
+            <p className="text-xs text-muted-foreground italic">{t('logs.noLogs')}</p>
           ) : (
             displayedEntries.map((entry) => (
               <LogEntry key={`${entry.timestamp}-${entry.type}-${entry.content}`} entry={entry} />
@@ -298,23 +301,24 @@ interface LogEntryProps {
 }
 
 function LogEntry({ entry }: LogEntryProps) {
+  const { t } = useTranslation('tasks');
   const [isExpanded, setIsExpanded] = useState(false);
   const hasDetail = Boolean(entry.detail);
 
   const getToolInfo = (toolName: string) => {
     switch (toolName) {
       case 'Read':
-        return { icon: FileText, label: 'Reading', color: 'text-blue-500 bg-blue-500/10' };
+        return { icon: FileText, label: 'logs.tool.reading', color: 'text-blue-500 bg-blue-500/10' };
       case 'Glob':
-        return { icon: FolderSearch, label: 'Searching files', color: 'text-amber-500 bg-amber-500/10' };
+        return { icon: FolderSearch, label: 'logs.tool.searchingFiles', color: 'text-amber-500 bg-amber-500/10' };
       case 'Grep':
-        return { icon: Search, label: 'Searching code', color: 'text-green-500 bg-green-500/10' };
+        return { icon: Search, label: 'logs.tool.searchingCode', color: 'text-green-500 bg-green-500/10' };
       case 'Edit':
-        return { icon: Pencil, label: 'Editing', color: 'text-purple-500 bg-purple-500/10' };
+        return { icon: Pencil, label: 'logs.tool.editing', color: 'text-purple-500 bg-purple-500/10' };
       case 'Write':
-        return { icon: FileCode, label: 'Writing', color: 'text-cyan-500 bg-cyan-500/10' };
+        return { icon: FileCode, label: 'logs.tool.writing', color: 'text-cyan-500 bg-cyan-500/10' };
       case 'Bash':
-        return { icon: Terminal, label: 'Running', color: 'text-orange-500 bg-orange-500/10' };
+        return { icon: Terminal, label: 'logs.tool.running', color: 'text-orange-500 bg-orange-500/10' };
       default:
         return { icon: Wrench, label: toolName, color: 'text-muted-foreground bg-muted' };
     }
@@ -345,7 +349,7 @@ function LogEntry({ entry }: LogEntryProps) {
       <div className="flex flex-col">
         <div className={cn('inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs', color)}>
           <Icon className="h-3 w-3 animate-pulse" />
-          <span className="font-medium">{label}</span>
+          <span className="font-medium">{t(label)}</span>
           {entry.tool_input && (
             <span className="text-muted-foreground truncate max-w-[500px]" title={entry.tool_input}>
               {entry.tool_input}
@@ -365,7 +369,7 @@ function LogEntry({ entry }: LogEntryProps) {
           <div className={cn('inline-flex items-center gap-2 rounded-md px-2 py-1 text-xs', color, 'opacity-60')}>
             <Icon className="h-3 w-3" />
             <CheckCircle2 className="h-3 w-3 text-success" />
-            <span className="text-muted-foreground">Done</span>
+            <span className="text-muted-foreground">{t('logs.tool.done')}</span>
           </div>
           {hasDetail && (
             <button
@@ -379,12 +383,12 @@ function LogEntry({ entry }: LogEntryProps) {
               {isExpanded ? (
                 <>
                   <ChevronDown className="h-2.5 w-2.5" />
-                  <span>Hide output</span>
+                  <span>{t('logs.hideOutput')}</span>
                 </>
               ) : (
                 <>
                   <ChevronRight className="h-2.5 w-2.5" />
-                  <span>Show output</span>
+                  <span>{t('logs.showOutput')}</span>
                 </>
               )}
             </button>
@@ -473,12 +477,12 @@ function LogEntry({ entry }: LogEntryProps) {
             {isExpanded ? (
               <>
                 <ChevronDown className="h-2.5 w-2.5" />
-                <span>Less</span>
+                <span>{t('logs.less')}</span>
               </>
             ) : (
               <>
                 <ChevronRight className="h-2.5 w-2.5" />
-                <span>More</span>
+                <span>{t('logs.more')}</span>
               </>
             )}
           </button>

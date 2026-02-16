@@ -1,0 +1,77 @@
+{
+  "expand": {
+    "expand": "展開終端機",
+    "collapse": "收合終端機"
+  },
+  "resume": {
+    "pending": "可恢復工作階段",
+    "pendingTooltip": "點擊以恢復先前的 Claude 工作階段",
+    "resumeAllSessions": "全部恢復"
+  },
+  "auth": {
+    "terminalTitle": "驗證：{{profileName}}",
+    "maxTerminalsReached": "無法開啟驗證終端機：已達終端機上限。請先關閉一個終端機。"
+  },
+  "worktree": {
+    "create": "工作樹",
+    "createNew": "新增工作樹",
+    "existing": "終端機工作樹",
+    "taskWorktrees": "任務工作樹",
+    "otherWorktrees": "其他",
+    "createTitle": "建立終端機工作樹",
+    "createDescription": "為此終端機建立隔離的工作區域。所有工作將在工作樹目錄中進行。",
+    "name": "工作樹名稱",
+    "namePlaceholder": "my-feature",
+    "nameRequired": "工作樹名稱為必填",
+    "nameInvalid": "名稱必須以字母或數字開頭及結尾",
+    "nameHelp": "小寫字母、數字、連字號和底線（空格會轉換為連字號）",
+    "associateTask": "連結至任務",
+    "selectTask": "選擇任務...",
+    "noTask": "無任務（獨立工作樹）",
+    "createBranch": "建立 Git 分支",
+    "branchHelp": "建立分支：{{branch}}",
+    "baseBranch": "基礎分支",
+    "selectBaseBranch": "選擇基礎分支...",
+    "searchBranch": "搜尋分支...",
+    "noBranchFound": "找不到分支",
+    "useProjectDefault": "使用專案預設值（{{branch}}）",
+    "baseBranchHelp": "建立工作樹所使用的來源分支",
+    "openInIDE": "在 IDE 中開啟",
+    "maxReached": "已達終端機工作樹上限（12 個）",
+    "alreadyExists": "此名稱的工作樹已存在",
+    "searchPlaceholder": "搜尋工作樹...",
+    "noResults": "找不到工作樹",
+    "deleteTitle": "刪除工作樹？",
+    "deleteDescription": "這將永久刪除工作樹及其分支。任何未提交的變更將會遺失。",
+    "detached": "（分離的）",
+    "remotePushFailed": "遠端追蹤未設定",
+    "remotePushFailedDescription": "工作樹已建立，但分支無法推送至遠端。您可能需要手動執行 git push -u。"
+  },
+  "dropToInsertPath": "拖放以插入路徑",
+  "title": {
+    "doubleClickToRename": "雙擊以重新命名"
+  },
+  "taskSelector": {
+    "selectTask": "選擇任務...",
+    "currentTask": "目前任務",
+    "switchTo": "切換到...",
+    "clearTask": "清除任務",
+    "availableTasks": "可用任務",
+    "addNewTask": "新增任務",
+    "noTasksAvailable": "沒有可用的任務",
+    "createInKanban": "在看板中建立任務"
+  },
+  "grid": {
+    "title": "代理終端機",
+    "description": "管理多達 12 個帶有任務上下文注入的平行 AI 終端機",
+    "newTerminal": "新增終端機",
+    "terminalCount": "{{count}} 個終端機",
+    "history": "歷史記錄",
+    "restoreSessions": "從上次使用中恢復工作階段",
+    "sessionCount": "{{count}} 個工作階段",
+    "sessionCount_plural": "{{count}} 個工作階段",
+    "invokeClaudeAll": "全部呼叫 Claude",
+    "files": "檔案",
+    "defaultTitle": "終端機"
+  }
+}

@@ -14,6 +14,7 @@ import {
   RefreshCw,
   GitBranch
 } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Button } from '../ui/button';
 import { Input } from '../ui/input';
 import { Label } from '../ui/label';
@@ -75,6 +76,8 @@ export function IntegrationSettings({
   githubExpanded,
   onGitHubToggle
 }: IntegrationSettingsProps) {
+  const { t } = useTranslation(['settings', 'common']);
+
   // Branch selection state
   const [branches, setBranches] = useState<string[]>([]);
   const [isLoadingBranches, setIsLoadingBranches] = useState(false);
@@ -154,7 +157,7 @@ export function IntegrationSettings({
             Linear Integration
             {envConfig.linearEnabled && (
               <span className="px-2 py-0.5 text-xs bg-success/10 text-success rounded-full">
-                Enabled
+                {t('common:labels.enabled')}
               </span>
             )}
           </div>
@@ -169,7 +172,7 @@ export function IntegrationSettings({
           <div className="space-y-4 pl-6 pt-2">
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
-                <Label className="font-normal text-foreground">Enable Linear Sync</Label>
+                <Label className="font-normal text-foreground">{t('settings:integrations.enableLinear')}</Label>
                 <p className="text-xs text-muted-foreground">
                   Create and update Linear issues automatically
                 </p>
@@ -183,7 +186,7 @@ export function IntegrationSettings({
             {envConfig.linearEnabled && (
               <>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-foreground">API Key</Label>
+                  <Label className="text-sm font-medium text-foreground">{t('settings:integrations.apiKey')}</Label>
                   <p className="text-xs text-muted-foreground">
                     Get your API key from{' '}
                     <a
@@ -218,7 +221,7 @@ export function IntegrationSettings({
                   <div className="rounded-lg border border-border bg-muted/30 p-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium text-foreground">Connection Status</p>
+                        <p className="text-sm font-medium text-foreground">{t('settings:integrations.connectionStatus')}</p>
                         <p className="text-xs text-muted-foreground">
                           {isCheckingLinear ? 'Checking...' :
                             linearConnectionStatus?.connected
@@ -248,7 +251,7 @@ export function IntegrationSettings({
                     <div className="flex items-start gap-3">
                       <Import className="h-5 w-5 text-info mt-0.5" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground">Import Existing Tasks</p>
+                        <p className="text-sm font-medium text-foreground">{t('settings:integrations.importExistingTasks')}</p>
                         <p className="text-xs text-muted-foreground mt-1">
                           Select which Linear issues to import into AutoBuild as tasks.
                         </p>
@@ -333,7 +336,7 @@ export function IntegrationSettings({
             GitHub Integration
             {envConfig.githubEnabled && (
               <span className="px-2 py-0.5 text-xs bg-success/10 text-success rounded-full">
-                Enabled
+                {t('common:labels.enabled')}
               </span>
             )}
           </div>
@@ -348,7 +351,7 @@ export function IntegrationSettings({
           <div className="space-y-4 pl-6 pt-2">
             <div className="flex items-center justify-between">
               <div className="space-y-0.5">
-                <Label className="font-normal text-foreground">Enable GitHub Issues</Label>
+                <Label className="font-normal text-foreground">{t('settings:integrations.enableGithubIssues')}</Label>
                 <p className="text-xs text-muted-foreground">
                   Sync issues from GitHub and create tasks automatically
                 </p>
@@ -362,7 +365,7 @@ export function IntegrationSettings({
             {envConfig.githubEnabled && (
               <>
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-foreground">Personal Access Token</Label>
+                  <Label className="text-sm font-medium text-foreground">{t('settings:integrations.personalAccessToken')}</Label>
                   <p className="text-xs text-muted-foreground">
                     Create a token with <code className="px-1 bg-muted rounded">repo</code> scope from{' '}
                     <a
@@ -393,7 +396,7 @@ export function IntegrationSettings({
                 </div>
 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium text-foreground">Repository</Label>
+                  <Label className="text-sm font-medium text-foreground">{t('settings:integrations.repository')}</Label>
                   <p className="text-xs text-muted-foreground">
                     Format: <code className="px-1 bg-muted rounded">owner/repo</code> (e.g., facebook/react)
                   </p>
@@ -409,7 +412,7 @@ export function IntegrationSettings({
                   <div className="rounded-lg border border-border bg-muted/30 p-3">
                     <div className="flex items-center justify-between">
                       <div>
-                        <p className="text-sm font-medium text-foreground">Connection Status</p>
+                        <p className="text-sm font-medium text-foreground">{t('settings:integrations.connectionStatus')}</p>
                         <p className="text-xs text-muted-foreground">
                           {isCheckingGitHub ? 'Checking...' :
                             gitHubConnectionStatus?.connected
@@ -439,7 +442,7 @@ export function IntegrationSettings({
                     <div className="flex items-start gap-3">
                       <Github className="h-5 w-5 text-info mt-0.5" />
                       <div className="flex-1">
-                        <p className="text-sm font-medium text-foreground">Issues Available</p>
+                        <p className="text-sm font-medium text-foreground">{t('settings:integrations.issuesAvailable')}</p>
                         <p className="text-xs text-muted-foreground mt-1">
                           Access GitHub Issues from the sidebar to view, investigate, and create tasks from issues.
                         </p>
@@ -473,7 +476,7 @@ export function IntegrationSettings({
                 <div className="space-y-2">
                   <div className="flex items-center gap-2">
                     <GitBranch className="h-4 w-4 text-info" />
-                    <Label className="text-sm font-medium text-foreground">Main Branch</Label>
+                    <Label className="text-sm font-medium text-foreground">{t('settings:integrations.mainBranch')}</Label>
                   </div>
                   <p className="text-xs text-muted-foreground">
                     The base branch for creating task worktrees. All new tasks will branch from here.

@@ -81,7 +81,9 @@
     "gotIt": "Got it",
     "continue": "Continue",
     "saving": "Saving...",
-    "deleting": "Deleting..."
+    "deleting": "Deleting...",
+    "edit": "Edit",
+    "test": "Test"
   },
   "actions": {
     "save": "Save",
@@ -107,7 +109,15 @@
     "required": "Required",
     "dismiss": "Dismiss",
     "important": "Important",
-    "orphaned": "(orphaned)"
+    "orphaned": "(orphaned)",
+    "or": "or",
+    "name": "Name",
+    "more": "More",
+    "less": "Less",
+    "all": "All",
+    "noFilesFound": "No files found",
+    "copyToClipboard": "Copy to clipboard",
+    "dropHere": "Drop here"
   },
   "selection": {
     "select": "Select",
@@ -135,12 +145,47 @@
     "taskNotFoundForWorktree": "Task not found for worktree: {{specName}}",
     "failedToDeleteTaskWorktree": "Failed to delete task worktree: {{specName}}",
     "terminalWorktreeNotFound": "Terminal worktree not found: {{name}}",
-    "failedToDeleteTerminalWorktree": "Failed to delete terminal worktree: {{name}}"
+    "failedToDeleteTerminalWorktree": "Failed to delete terminal worktree: {{name}}",
+    "failedToLoadTaskWorktrees": "Failed to load task worktrees",
+    "failedToLoadWorktrees": "Failed to load worktrees",
+    "taskNotFound": "Task not found for this worktree",
+    "mergeFailed": "Merge failed",
+    "failedToDeleteWorktree": "Failed to delete worktree"
   },
   "worktrees": {
     "deleteSuccess": "Worktree '{{branch}}' deleted successfully",
     "bulkDeleteSuccess": "{{count}} worktree deleted successfully",
-    "bulkDeleteSuccess_plural": "{{count}} worktrees deleted successfully"
+    "bulkDeleteSuccess_plural": "{{count}} worktrees deleted successfully",
+    "selectProject": "Select a project to view worktrees",
+    "title": "Worktrees",
+    "description": "Manage isolated workspaces for your Auto Claude tasks",
+    "error": "Error",
+    "noWorktrees": "No Worktrees",
+    "noWorktreesDescription": "Worktrees are created automatically when Auto Claude builds features. You can also create terminal worktrees from the Agent Terminals tab.",
+    "taskWorktrees": "Task Worktrees",
+    "terminalWorktrees": "Terminal Worktrees",
+    "filesChanged": "{{count}} files changed",
+    "commitsAhead": "{{count}} commits ahead",
+    "mergeTo": "Merge to {{branch}}",
+    "copyPath": "Copy Path",
+    "createdAt": "Created {{date}}",
+    "mergeWorktree": "Merge Worktree",
+    "mergeDescription": "Merge changes from this worktree into the base branch.",
+    "sourceBranch": "Source Branch",
+    "targetBranch": "Target Branch",
+    "changes": "Changes",
+    "commitsAndFiles": "{{commits}} commits, {{files}} files",
+    "mergeSuccessful": "Merge Successful",
+    "mergeFailed": "Merge Failed",
+    "conflictingFiles": "Conflicting files:",
+    "merging": "Merging...",
+    "deleteWorktreeTitle": "Delete Worktree?",
+    "deleteWorktreeDescription": "This will permanently delete the worktree and all uncommitted changes.",
+    "cannotBeUndone": "This action cannot be undone.",
+    "deleting": "Deleting...",
+    "deleteTerminalWorktreeTitle": "Delete Terminal Worktree?",
+    "deleteTerminalWorktreeDescription": "This will permanently delete the worktree and its branch. Any uncommitted changes will be lost.",
+    "failedToDeleteTerminalWorktree": "Failed to delete terminal worktree"
   },
   "notification": {
     "accountSwitched": "Account Switched",
@@ -216,7 +261,17 @@
       "whatHappenedDesc": "The {{source}} operation was stopped because your Claude account ({{account}}) reached its usage limit.",
       "switchRetryOrAdd": "You can switch to another account and retry, or add more accounts above.",
       "addOrWait": "Add another Claude account above to continue working, or wait for the limit to reset.",
-      "close": "Close"
+      "close": "Close",
+      "switchAndRetryDesc": "Switch to another Claude account and retry the operation:",
+      "recommendedLabel": "Recommended",
+      "sources": {
+        "changelog": "Changelog Generation",
+        "task": "Task Execution",
+        "roadmap": "Roadmap Generation",
+        "ideation": "Ideation",
+        "titleGenerator": "Title Generation",
+        "default": "Claude Operation"
+      }
     }
   },
   "prReview": {
@@ -425,7 +480,24 @@
     "suggestedTask": "Suggested Task",
     "creating": "Creating...",
     "taskCreated": "Task Created",
-    "createTask": "Create Task"
+    "createTask": "Create Task",
+    "title": "Insights",
+    "askAboutCodebase": "Ask questions about your codebase",
+    "newChat": "New Chat",
+    "startConversation": "Start a Conversation",
+    "startConversationDesc": "Ask questions about your codebase, get suggestions for improvements, or discuss features you'd like to implement.",
+    "assistant": "Assistant",
+    "you": "You",
+    "thinking": "Thinking...",
+    "askPlaceholder": "Ask about your codebase...",
+    "sendHint": "Press Enter to send, Shift+Enter for new line",
+    "hideSidebar": "Hide sidebar",
+    "showSidebar": "Show sidebar",
+    "toolsUsed": "{{count}} tool used",
+    "toolsUsed_plural": "{{count}} tools used",
+    "readingFile": "Reading file",
+    "searchingFiles": "Searching files",
+    "searchingCode": "Searching code"
   },
   "ideation": {
     "converting": "Converting...",

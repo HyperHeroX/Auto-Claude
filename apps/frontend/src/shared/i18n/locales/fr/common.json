@@ -81,7 +81,9 @@
     "gotIt": "Compris",
     "continue": "Continuer",
     "saving": "Enregistrement...",
-    "deleting": "Suppression..."
+    "deleting": "Suppression...",
+    "edit": "Modifier",
+    "test": "Tester"
   },
   "actions": {
     "save": "Enregistrer",
@@ -107,7 +109,15 @@
     "required": "Requis",
     "dismiss": "Ignorer",
     "important": "Important",
-    "orphaned": "(orphelin)"
+    "orphaned": "(orphelin)",
+    "or": "ou",
+    "name": "Nom",
+    "more": "Plus",
+    "less": "Moins",
+    "all": "Tout",
+    "noFilesFound": "Aucun fichier trouvé",
+    "copyToClipboard": "Copier dans le presse-papiers",
+    "dropHere": "Déposer ici"
   },
   "selection": {
     "select": "Sélectionner",
@@ -135,12 +145,47 @@
     "taskNotFoundForWorktree": "Tâche introuvable pour le worktree : {{specName}}",
     "failedToDeleteTaskWorktree": "Échec de la suppression du worktree de tâche : {{specName}}",
     "terminalWorktreeNotFound": "Worktree terminal introuvable : {{name}}",
-    "failedToDeleteTerminalWorktree": "Échec de la suppression du worktree terminal : {{name}}"
+    "failedToDeleteTerminalWorktree": "Échec de la suppression du worktree terminal : {{name}}",
+    "failedToLoadTaskWorktrees": "Échec du chargement des worktrees de tâche",
+    "failedToLoadWorktrees": "Échec du chargement des worktrees",
+    "taskNotFound": "Tâche introuvable pour ce worktree",
+    "mergeFailed": "Échec de la fusion",
+    "failedToDeleteWorktree": "Échec de la suppression du worktree"
   },
   "worktrees": {
     "deleteSuccess": "Worktree '{{branch}}' supprimé avec succès",
     "bulkDeleteSuccess": "{{count}} worktree supprimé avec succès",
-    "bulkDeleteSuccess_plural": "{{count}} worktrees supprimés avec succès"
+    "bulkDeleteSuccess_plural": "{{count}} worktrees supprimés avec succès",
+    "selectProject": "Sélectionnez un projet pour voir les worktrees",
+    "title": "Worktrees",
+    "description": "Gérez les espaces de travail isolés pour vos tâches Auto Claude",
+    "error": "Erreur",
+    "noWorktrees": "Aucun Worktree",
+    "noWorktreesDescription": "Les worktrees sont créés automatiquement lorsqu'Auto Claude construit des fonctionnalités. Vous pouvez également créer des worktrees terminaux depuis l'onglet Terminaux Agent.",
+    "taskWorktrees": "Worktrees de Tâche",
+    "terminalWorktrees": "Worktrees Terminaux",
+    "filesChanged": "{{count}} fichiers modifiés",
+    "commitsAhead": "{{count}} commits en avance",
+    "mergeTo": "Fusionner vers {{branch}}",
+    "copyPath": "Copier le chemin",
+    "createdAt": "Créé le {{date}}",
+    "mergeWorktree": "Fusionner le Worktree",
+    "mergeDescription": "Fusionner les modifications de ce worktree dans la branche de base.",
+    "sourceBranch": "Branche source",
+    "targetBranch": "Branche cible",
+    "changes": "Modifications",
+    "commitsAndFiles": "{{commits}} commits, {{files}} fichiers",
+    "mergeSuccessful": "Fusion réussie",
+    "mergeFailed": "Échec de la fusion",
+    "conflictingFiles": "Fichiers en conflit :",
+    "merging": "Fusion en cours...",
+    "deleteWorktreeTitle": "Supprimer le Worktree ?",
+    "deleteWorktreeDescription": "Ceci supprimera définitivement le worktree et toutes les modifications non committées.",
+    "cannotBeUndone": "Cette action est irréversible.",
+    "deleting": "Suppression...",
+    "deleteTerminalWorktreeTitle": "Supprimer le Worktree Terminal ?",
+    "deleteTerminalWorktreeDescription": "Ceci supprimera définitivement le worktree et sa branche. Les modifications non committées seront perdues.",
+    "failedToDeleteTerminalWorktree": "Échec de la suppression du worktree terminal"
   },
   "notification": {
     "accountSwitched": "Compte changé",
@@ -216,7 +261,17 @@
       "whatHappenedDesc": "L'opération {{source}} a été arrêtée car votre compte Claude ({{account}}) a atteint sa limite d'utilisation.",
       "switchRetryOrAdd": "Vous pouvez passer à un autre compte et réessayer, ou ajouter plus de comptes ci-dessus.",
       "addOrWait": "Ajoutez un autre compte Claude ci-dessus pour continuer à travailler, ou attendez la réinitialisation de la limite.",
-      "close": "Fermer"
+      "close": "Fermer",
+      "switchAndRetryDesc": "Passez à un autre compte Claude et réessayez l'opération :",
+      "recommendedLabel": "Recommandé",
+      "sources": {
+        "changelog": "Génération du changelog",
+        "task": "Exécution de la tâche",
+        "roadmap": "Génération de la feuille de route",
+        "ideation": "Idéation",
+        "titleGenerator": "Génération du titre",
+        "default": "Opération Claude"
+      }
     }
   },
   "prReview": {
@@ -425,7 +480,24 @@
     "suggestedTask": "Tâche suggérée",
     "creating": "Création...",
     "taskCreated": "Tâche créée",
-    "createTask": "Créer une tâche"
+    "createTask": "Créer une tâche",
+    "title": "Insights",
+    "askAboutCodebase": "Posez des questions sur votre base de code",
+    "newChat": "Nouveau Chat",
+    "startConversation": "Commencer une Conversation",
+    "startConversationDesc": "Posez des questions sur votre base de code, explorez des patterns, ou obtenez de l'aide pour le débogage. L'IA a un contexte complet de la structure et des conventions de votre projet.",
+    "assistant": "Assistant",
+    "you": "Vous",
+    "thinking": "Réflexion...",
+    "askPlaceholder": "Posez une question sur votre base de code...",
+    "sendHint": "Entrée pour envoyer",
+    "hideSidebar": "Masquer la barre latérale",
+    "showSidebar": "Afficher la barre latérale",
+    "toolsUsed": "{{count}} outil utilisé",
+    "toolsUsed_plural": "{{count}} outils utilisés",
+    "readingFile": "Lecture du fichier",
+    "searchingFiles": "Recherche de fichiers",
+    "searchingCode": "Recherche de code"
   },
   "ideation": {
     "converting": "Conversion...",

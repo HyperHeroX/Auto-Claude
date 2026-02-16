@@ -1,0 +1,83 @@
+{
+  "title": "創意發想",
+  "emptyState": {
+    "title": "尚無創意",
+    "description": "根據您專案的上下文、現有模式和目標受眾，產生由 AI 驅動的功能創意。",
+    "generate": "產生創意"
+  },
+  "enabledTypes": "已啟用的創意類型",
+  "configTitle": "創意發想設定",
+  "configDescription": "設定要產生的創意類型",
+  "types": "創意類型",
+  "contextSources": "上下文來源",
+  "includeRoadmap": "包含路線圖上下文",
+  "includeKanban": "包含看板上下文",
+  "addMoreIdeas": "新增更多創意",
+  "addMoreDescription": "選擇要產生的額外創意類型。您現有的創意將被保留。",
+  "allTypesGenerated": "您已產生所有創意類型！",
+  "useRegenerateHint": "使用「重新產生」來更新現有創意。",
+  "generating": "正在產生創意",
+  "stopGeneration": "停止產生",
+  "authRequired": "需要 Claude 驗證",
+  "authDescription": "需要 Claude Code OAuth 權杖才能產生 AI 驅動的功能創意。",
+  "tokenWarning": "未設定 Claude 權杖。產生時會提示您輸入。",
+  "header": {
+    "title": "創意發想",
+    "generate": "產生創意",
+    "settings": "設定",
+    "ideasCount": "{{count}} 個創意",
+    "aiDescription": "為您的專案產生的 AI 功能創意",
+    "selected": "已選擇 {{count}} 個",
+    "addMore": "新增更多"
+  },
+  "filters": {
+    "all": "全部",
+    "codeImprovements": "程式碼",
+    "uiux": "UI/UX",
+    "documentation": "文件",
+    "security": "安全性",
+    "performance": "效能"
+  },
+  "dialogs": {
+    "deleteTitle": "刪除創意？",
+    "deleteDescription": "此操作無法復原",
+    "convertTitle": "轉換為任務",
+    "generateTypes": "產生 {{count}} 種類型",
+    "generateIdeas": "產生創意",
+    "close": "關閉",
+    "cancel": "取消"
+  },
+  "progress": {
+    "analyzing": "正在分析程式碼...",
+    "generating": "正在產生創意...",
+    "step": "步驟",
+    "complete": "完成",
+    "showLogs": "顯示日誌",
+    "hideLogs": "隱藏日誌",
+    "stopping": "正在停止...",
+    "waitingToStart": "等待開始...",
+    "failedToGenerate": "無法為此類別產生創意",
+    "noIdeasGenerated": "此類別未產生任何創意",
+    "noIdeasToDisplay": "沒有可顯示的創意"
+  },
+  "details": {
+    "severity": "嚴重性",
+    "files": "受影響的檔案",
+    "compliance": "合規性",
+    "impact": "影響",
+    "effort": "工作量",
+    "category": "類別",
+    "priority": "優先順序",
+    "breakingChange": "破壞性變更",
+    "metrics": "指標",
+    "lines": "行數",
+    "complexity": "複雜度",
+    "duplicateLines": "重複行數",
+    "testCoverage": "測試覆蓋率",
+    "patternsToFollow": "應遵循的模式",
+    "recommendation": "建議",
+    "high": "高",
+    "medium": "中",
+    "low": "低"
+  }
+}

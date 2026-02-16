@@ -21,7 +21,13 @@
     "viewPR": "View PR",
     "moveTo": "Move to",
     "taskActions": "Task actions",
-    "selectTask": "Select task: {{title}}"
+    "selectTask": "Select task: {{title}}",
+    "startTask": "Start Task",
+    "stopTask": "Stop Task",
+    "recoverTask": "Recover Task",
+    "resumeTask": "Resume Task",
+    "deleteTask": "Delete Task",
+    "loadingPlan": "Loading Plan..."
   },
   "labels": {
     "running": "Running",
@@ -179,7 +185,15 @@
     "severity": "severity",
     "pullRequest": "Pull Request",
     "showMore": "Show more",
-    "showLess": "Show less"
+    "showLess": "Show less",
+    "rationale": "Rationale",
+    "problemSolved": "Problem Solved",
+    "targetAudience": "Target Audience",
+    "dependencies": "Dependencies",
+    "acceptanceCriteria": "Acceptance Criteria",
+    "affectedFiles": "Affected Files",
+    "created": "Created {{time}}",
+    "updated": "Updated {{time}}"
   },
   "images": {
     "removeImageAriaLabel": "Remove image {{filename}}",
@@ -235,7 +249,13 @@
     "processingError": "Failed to process image"
   },
   "review": {
-    "mergeTooltip": "Merges changes from the task's worktree branch back to your base branch. AI will resolve any conflicts. You can then choose whether to keep or remove the worktree."
+    "mergeTooltip": "Merges changes from the task's worktree branch back to your base branch. AI will resolve any conflicts. You can then choose whether to keep or remove the worktree.",
+    "commitPlaceholder": "Commit message...",
+    "openInIde": "Open your project in your IDE or terminal",
+    "reviewStaged": "Review the staged changes",
+    "pushToRemote": "Push to remote when satisfied",
+    "aiWillResolve": "AI will resolve conflicts",
+    "readyToMerge": "Ready to merge"
   },
   "edit": {
     "title": "Edit Task",
@@ -306,7 +326,11 @@
     }
   },
   "subtasks": {
-    "untitled": "Untitled subtask"
+    "untitled": "Untitled subtask",
+    "noSubtasks": "No subtasks defined",
+    "afterPlanning": "Implementation subtasks will appear here after planning",
+    "completedCount": "{{completed}} of {{total}} completed",
+    "label": "subtasks"
   },
   "bulkPR": {
     "selectAllInColumn": "Select all tasks in column",
@@ -346,8 +370,98 @@
     "deletePermanently": "Delete Permanently",
     "deleting": "Deleting..."
   },
+  "imageUpload": {
+    "dropHint": "Drop images here or click to browse",
+    "maxReached": "Maximum images reached",
+    "formatInfo": "{{types}} up to 10MB each ({{current}}/{{max}})",
+    "maxInfo": "{{max}} images maximum",
+    "largeFileWarning": "Large file - consider compressing",
+    "maxAllowed": "Maximum of {{max}} images allowed",
+    "slotsRemaining": "Only {{count}} more image(s) can be added. Some files were skipped.",
+    "invalidType": "\"{{name}}\" is not a valid image type. Allowed: {{types}}",
+    "tooLarge": "\"{{name}}\" is larger than 10MB. Consider compressing it for better performance.",
+    "processFailed": "Failed to process \"{{name}}\""
+  },
+  "referencedFiles": {
+    "title": "Referenced Files",
+    "folder": "folder"
+  },
   "referenceImages": {
     "title": "Reference Images (optional)",
     "description": "Add visual references like screenshots or designs to help the AI understand your requirements."
-  }
+  },
+  "worktrees": {
+    "selectProject": "Select a project to view worktrees",
+    "noWorktrees": "No Worktrees",
+    "sourceBranch": "Source Branch",
+    "targetBranch": "Target Branch",
+    "changes": "Changes"
+  },
+  "logs": {
+    "noLogs": "No logs yet",
+    "logsWillAppear": "Logs will appear here when the task runs",
+    "hideOutput": "Hide output",
+    "showOutput": "Show output",
+    "phases": {
+      "planning": "Planning",
+      "coding": "Coding",
+      "validation": "Validation"
+    },
+    "statusBadge": {
+      "running": "Running",
+      "complete": "Complete",
+      "failed": "Failed",
+      "pending": "Pending"
+    },
+    "tool": {
+      "reading": "Reading",
+      "searchingFiles": "Searching files",
+      "searchingCode": "Searching code",
+      "editing": "Editing",
+      "writing": "Writing",
+      "running": "Running",
+      "done": "Done"
+    },
+    "more": "More",
+    "less": "Less"
+  },
+  "taskCompletedSuccessfully": "Task completed successfully",
+  "progress": {
+    "planning": "Planning (0-20%)",
+    "coding": "Coding (20-80%)",
+    "aiReview": "AI Review (80-95%)",
+    "complete": "Complete (95-100%)",
+    "subtaskPrefix": "Subtask:",
+    "subtasksCompleted": "{{completed}}/{{total}} subtasks completed",
+    "noSubtasksYet": "No subtasks yet",
+    "sectionTitle": "Progress"
+  },
+  "tabs": {
+    "overview": "Overview",
+    "subtasks": "Subtasks",
+    "logs": "Logs"
+  },
+  "warnings": {
+    "stuckTitle": "Task Appears Stuck",
+    "stuckDescription": "This task is marked as running but no active process was found. This can happen if the app crashed or the process was terminated unexpectedly.",
+    "recoverAndRestart": "Recover & Restart Task",
+    "incompleteTitle": "Task Incomplete",
+    "incompleteDescription": "This task has a spec and implementation plan but never completed any subtasks ({{completed}}/{{total}}). The process likely crashed during spec creation. Click Resume to continue implementation."
+  },
+  "merge": {
+    "conflictsPreview": "Merge Conflicts Preview",
+    "conflictsDetected_one": "{{count}} potential conflict detected.",
+    "conflictsDetected_other": "{{count}} potential conflicts detected.",
+    "canAutoMerge": "{{count}} can be auto-merged.",
+    "autoMergeBadge": "auto-merge",
+    "location": "Location:",
+    "reason": "Reason:",
+    "strategy": "Strategy:",
+    "noConflicts": "No conflicts detected",
+    "stageWithAI": "Stage with AI Merge",
+    "mergeWithAI": "Merge with AI"
+  },
+  "projectFiles": "Project Files",
+  "dragFilesToAdd": "Drag files to add as references",
+  "searchPlaceholder": "Search tasks..."
 }

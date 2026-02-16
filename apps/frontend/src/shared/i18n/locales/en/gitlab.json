@@ -20,6 +20,7 @@
   },
   "empty": {
     "noMatch": "No issues match your search",
+    "noIssues": "No issues found",
     "selectIssue": "Select an issue to view details"
   },
   "notConnected": {
@@ -36,7 +37,8 @@
     "description": "Description",
     "noDescription": "No description provided.",
     "assignees": "Assignees",
-    "milestone": "Milestone"
+    "milestone": "Milestone",
+    "investigateIssue": "Investigate issue"
   },
   "investigation": {
     "title": "Create Task from Issue",
@@ -204,5 +206,16 @@
       "performance": "Performance",
       "logic": "Logic"
     }
+  },
+  "mr": {
+    "reviewFailed": "Review failed",
+    "description": "Description",
+    "labels": "Labels",
+    "title": "Title",
+    "titlePlaceholder": "Merge request title",
+    "sourceBranch": "Source Branch",
+    "targetBranch": "Target Branch",
+    "descriptionPlaceholder": "Describe the changes...",
+    "searchPlaceholder": "Search merge requests..."
   }
 }

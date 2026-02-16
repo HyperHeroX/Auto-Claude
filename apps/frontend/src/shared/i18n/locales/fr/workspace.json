@@ -1,0 +1,31 @@
+{
+  "createWorkspace": "Créer un espace de travail",
+  "groupProjectsDesc": "Regroupez les projets liés pour partager le contexte entre les tâches.",
+  "name": "Nom",
+  "descriptionOptional": "Description (optionnel)",
+  "namePlaceholder": "Mon espace de travail",
+  "descriptionPlaceholder": "Backend, frontend et applications mobiles...",
+  "projects": "Projets",
+  "addProjectPlaceholder": "Ajouter un projet...",
+  "allProjectsAdded": "Tous les projets ont été ajoutés",
+  "noProjectsAvailable": "Aucun projet disponible",
+  "workspaceNameRequired": "Le nom de l'espace de travail est requis",
+  "workspaceApiNotAvailable": "API de l'espace de travail non disponible",
+  "creating": "Création...",
+  "roles": {
+    "backend": "Backend",
+    "backendDesc": "Serveur API, services",
+    "frontend": "Frontend",
+    "frontendDesc": "Application web",
+    "mobile": "Mobile",
+    "mobileDesc": "Application mobile",
+    "shared": "Partagé",
+    "sharedDesc": "Types/utilitaires partagés",
+    "api": "Passerelle API",
+    "apiDesc": "Passerelle, BFF",
+    "worker": "Worker",
+    "workerDesc": "Tâches en arrière-plan",
+    "other": "Autre",
+    "otherDesc": "Autre type de projet"
+  }
+}

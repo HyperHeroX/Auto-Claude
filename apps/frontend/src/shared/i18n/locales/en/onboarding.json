@@ -182,7 +182,8 @@
     "toggle": {
       "label": "Send anonymous error reports",
       "description": "Help us identify and fix issues"
-    }
+    },
+    "saveFailed": "Failed to save privacy settings. Please try again."
   },
   "claudeCode": {
     "title": "Claude Code CLI",
@@ -195,11 +196,13 @@
     "status": {
       "installed": "Installed",
       "outdated": "Update Available",
-      "notFound": "Not Installed"
+      "notFound": "Not Installed",
+      "error": "Error checking status"
     },
     "version": {
       "current": "Current Version",
-      "latest": "Latest Version"
+      "latest": "Latest Version",
+      "path": "Path"
     },
     "install": {
       "button": "Install Claude Code",
@@ -220,17 +223,21 @@
     "ide": {
       "label": "Preferred IDE",
       "description": "Auto Claude will open worktrees in this editor",
-      "customPath": "Custom IDE Path"
+      "customPath": "Custom IDE Path",
+      "select": "Select IDE..."
     },
     "terminal": {
       "label": "Preferred Terminal",
       "description": "Auto Claude will open terminal sessions here",
-      "customPath": "Custom Terminal Path"
+      "customPath": "Custom Terminal Path",
+      "select": "Select terminal..."
     },
     "detectedSummary": "Detected on your system:",
     "noToolsDetected": "No additional tools detected (VS Code and system terminal will be used)",
     "custom": "Custom...",
-    "saveAndContinue": "Save & Continue"
+    "saveAndContinue": "Save & Continue",
+    "back": "Back",
+    "saving": "Saving..."
   },
   "ollama": {
     "notInstalled": {
@@ -248,6 +255,145 @@
       "description": "Ollama is installed but not running. Start Ollama to use local embedding models.",
       "retry": "Retry",
       "fallbackNote": "Memory will still work with keyword search even without embeddings."
+    },
+    "checkingModels": "Checking Ollama models...",
+    "badges": {
+      "recommended": "Recommended",
+      "quality": "Highest Quality",
+      "fast": "Fastest",
+      "installed": "Installed"
+    },
+    "download": "Download",
+    "downloadingModel": "Downloading...",
+    "startingDownload": "Starting download...",
+    "modelHint": "Select an installed model for semantic search. Memory works with keyword search even without embeddings."
+  },
+  "auth": {
+    "signInAnthropic": "Sign in with Anthropic",
+    "signInDescription": "Use your Anthropic account",
+    "customApiKey": "Use Custom API Key",
+    "customApiKeyDescription": "Bring your own API key"
+  },
+  "authChoice": {
+    "title": "Choose Your Authentication Method",
+    "subtitle": "Select how you want to authenticate with Claude. You can change this later in Settings.",
+    "oauthTitle": "Sign in with Anthropic",
+    "oauthDescription": "Use your Anthropic account to authenticate. Simple and secure OAuth flow.",
+    "apiKeyTitle": "Use Custom API Key",
+    "apiKeyDescription": "Bring your own API key from Anthropic or a compatible API provider. ⚠️ Highly experimental — may incur significant costs.",
+    "info": "Both options provide full access to Claude Code features. Choose based on your preference.",
+    "skipForNow": "Skip for now"
+  },
+  "firstSpec": {
+    "title": "Create Your First Task",
+    "subtitle": "Describe what you want to build and let Auto Claude handle the rest",
+    "success": {
+      "title": "Task Creator Opened",
+      "description": "Great! You can create your first task now or continue with the wizard. You can always create tasks later from the main dashboard."
+    },
+    "tipsTitle": "Tips for Great Tasks",
+    "tips": {
+      "beDescriptive": {
+        "title": "Be Descriptive",
+        "description": "Clearly describe what you want to build. Include requirements, constraints, and expected behavior."
+      },
+      "startSmall": {
+        "title": "Start Small",
+        "description": "Begin with a focused task like adding a feature or fixing a bug. Smaller tasks are easier to verify."
+      },
+      "includeContext": {
+        "title": "Include Context",
+        "description": "Mention relevant files, APIs, or patterns. The more context you provide, the better the results."
+      },
+      "letAiHelp": {
+        "title": "Let AI Help",
+        "description": "The AI can generate titles and classify tasks. Focus on describing what you want, not the details."
+      }
+    },
+    "example": {
+      "title": "Example Task Description:",
+      "description": "\"Add a dark mode toggle to the settings page. It should persist the user's preference in localStorage and apply the theme immediately without page reload. Use the existing color variables in styles/theme.css.\""
+    },
+    "openTaskCreator": "Open Task Creator",
+    "skipInfoCreated": "You can continue with the wizard now or create more tasks.",
+    "skipInfo": "You can skip this step and create tasks later from the dashboard.",
+    "back": "Back",
+    "skip": "Skip",
+    "continue": "Continue"
+  },
+  "graphiti": {
+    "pageTitle": "Memory & Context",
+    "pageSubtitle": "Enable Graphiti for persistent memory across coding sessions",
+    "success": {
+      "title": "Graphiti configured successfully",
+      "description": "Memory features are enabled. Auto Claude will maintain context across sessions for improved code understanding."
+    },
+    "reconfigure": "Reconfigure Graphiti settings",
+    "dbAutoCreate": {
+      "title": "Database will be created automatically",
+      "description": "LadybugDB uses an embedded database - no Docker required. The database will be created when you first use memory features."
+    },
+    "whatIsGraphiti": "What is Graphiti?",
+    "whatIsGraphitiDescription": "Graphiti is an intelligent memory layer that helps Auto Claude remember context across sessions. It uses a knowledge graph to store discoveries, patterns, and insights about your codebase.",
+    "enableToggle": "Enable Graphiti Memory",
+    "enableToggleDescription": "Uses LadybugDB (embedded) and an LLM/embedding provider",
+    "databaseName": "Database Name",
+    "databasePath": "Stored in ~/.auto-claude/graphs/",
+    "ready": "Ready",
+    "issue": "Issue",
+    "llmProviderLabel": "LLM Provider",
+    "embeddingProviderLabel": "Embedding Provider",
+    "testConnection": "Test Connection",
+    "testingConnection": "Testing connection...",
+    "allValidated": "All connections validated successfully!",
+    "apiKeyValidationNote": "Note: API key validation currently only fully supports OpenAI. Your key will be saved and used at runtime.",
+    "ollamaTestNote": "Note: Ollama connection will be tested by checking if the server is reachable.",
+    "openaiApiKey": "OpenAI API Key",
+    "getKeyFrom": "Get your key from",
+    "anthropicApiKey": "Anthropic API Key",
+    "voyageApiKey": "Voyage API Key",
+    "googleApiKey": "Google API Key",
+    "groqApiKey": "Groq API Key",
+    "openRouterApiKey": "OpenRouter API Key",
+    "ollamaSettings": "Ollama Settings (Local)",
+    "ollamaEnsure": "Ensure Ollama is running locally. See",
+    "saveFailed": "Failed to save Graphiti configuration",
+    "testFailed": "Failed to test connection",
+    "unknownError": "Unknown error occurred",
+    "back": "Back",
+    "skip": "Skip",
+    "saving": "Saving...",
+    "saveAndContinue": "Save & Continue",
+    "continueButton": "Continue",
+    "azureSettings": "Azure OpenAI Settings",
+    "apiKey": "API Key",
+    "baseUrl": "Base URL",
+    "llmDeployment": "LLM Deployment Name",
+    "embeddingDeployment": "Embedding Deployment Name",
+    "llmModel": "LLM Model",
+    "embeddingModel": "Embedding Model",
+    "embeddingDimension": "Embedding Dimension",
+    "benefit1": "Persistent memory across coding sessions",
+    "benefit2": "Better understanding of your codebase over time",
+    "benefit3": "Reduces repetitive explanations",
+    "benefit4": "No Docker required - uses embedded database",
+    "learnMore": "Learn more about Graphiti",
+    "llmProviders": {
+      "openai": "GPT models (recommended)",
+      "anthropic": "Claude models",
+      "google": "Gemini models",
+      "groq": "Llama models (fast inference)",
+      "openrouter": "Multi-provider aggregator",
+      "azure": "Enterprise Azure deployment",
+      "ollama": "Local models (free)"
+    },
+    "embeddingProviders": {
+      "ollama": "Local embeddings (free)",
+      "openai": "text-embedding-3-small (recommended)",
+      "voyage": "voyage-3 (great with Anthropic)",
+      "google": "Gemini text-embedding-004",
+      "openrouter": "OpenAI-compatible embeddings",
+      "azure": "Enterprise Azure embeddings"
     }
   }
 }

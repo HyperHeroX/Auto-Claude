@@ -1,0 +1,89 @@
+{
+  "tabs": {
+    "kanban": "看板",
+    "phases": "階段",
+    "allFeatures": "所有功能",
+    "byPriority": "依優先順序"
+  },
+  "clickToViewAnalysis": "點擊查看詳細分析",
+  "addFeatureTooltip": "新增功能至路線圖",
+  "regenerateTooltip": "重新產生路線圖",
+  "emptyState": {
+    "title": "尚無路線圖",
+    "description": "產生由 AI 驅動的路線圖，了解您專案的目標受眾並建立策略性功能計畫。",
+    "generate": "產生路線圖"
+  },
+  "progress": "進度",
+  "milestones": "里程碑",
+  "description": "描述",
+  "rationale": "理由",
+  "complexity": "複雜度",
+  "impact": "影響力",
+  "dependencies": "依賴項目",
+  "competitorTooltip": "此功能針對競爭對手的痛點",
+  "marketInsightsSummary": "市場洞察摘要",
+  "dropHere": "拖放至此",
+  "header": {
+    "title": "路線圖",
+    "generate": "產生路線圖",
+    "lastGenerated": "上次產生",
+    "competitorAnalysis": "競爭分析",
+    "addFeature": "新增功能",
+    "target": "目標",
+    "features": "功能",
+    "phases": "階段",
+    "morePersonas": "還有 {{count}} 個角色",
+    "secondaryPersonas": "次要角色"
+  },
+  "phase": {
+    "tasks": "任務",
+    "completed": "已完成",
+    "viewTask": "查看任務",
+    "build": "建構",
+    "featuresCount": "功能 ({{count}})"
+  },
+  "feature": {
+    "priority": "優先順序",
+    "effort": "工作量",
+    "impact": "影響力",
+    "dependencies": "依賴項目",
+    "description": "描述",
+    "high": "高",
+    "medium": "中",
+    "low": "低",
+    "impactLabel": "{{value}} 影響力",
+    "competitorInsight": "競爭洞察",
+    "goToTask": "前往任務",
+    "build": "建構",
+    "convertToTask": "轉換為自動建構任務",
+    "deleteFeature": "刪除功能？",
+    "deleteConfirm": "這將永久從您的路線圖中移除「{{title}}」。",
+    "userStories": "使用者故事",
+    "acceptanceCriteria": "驗收標準",
+    "addressesCompetitorPainPoints": "解決競爭對手痛點",
+    "severityLabel": "{{severity}} 嚴重度"
+  },
+  "competitor": {
+    "title": "競爭分析",
+    "analysisResults": "競爭分析結果",
+    "analyzedCompetitors": "已分析 {{count}} 個競爭對手以識別市場缺口和機會",
+    "strengths": "優勢",
+    "weaknesses": "劣勢",
+    "painPoints": "已識別痛點 ({{count}})",
+    "noPainPoints": "未識別到痛點",
+    "source": "來源",
+    "frequency": "頻率",
+    "opportunity": "機會",
+    "topPainPoints": "主要痛點",
+    "differentiatorOpportunities": "差異化機會",
+    "marketTrends": "市場趨勢",
+    "visit": "訪問"
+  },
+  "kanban": {
+    "todo": "待辦",
+    "inProgress": "進行中",
+    "done": "已完成",
+    "noFeatures": "沒有功能",
+    "dragFeaturesHere": "將功能拖放至此"
+  }
+}

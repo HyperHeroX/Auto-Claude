@@ -102,6 +102,9 @@ def validate_subtask_files(subtask: dict, project_dir: Path) -> dict:
     """
     Validate all files_to_modify exist before subtask execution.
 
+    Files that also appear in files_to_create are excluded from the existence
+    check, since they are new files the coder agent is expected to create.
+
     Args:
         subtask: Subtask dictionary containing files_to_modify array
         project_dir: Root directory of the project
@@ -117,8 +120,15 @@ def validate_subtask_files(subtask: dict, project_dir: Path) -> dict:
     missing_files = []
     invalid_paths = []
 
+    # Files listed in files_to_create are expected NOT to exist yet —
+    # exclude them from the existence check even if they also appear
+    # in files_to_modify (common planner mis-categorization).
+    files_to_create = set(subtask.get("files_to_create", []))
+
     resolved_project = Path(project_dir).resolve()
     for file_path in subtask.get("files_to_modify", []):
+        if file_path in files_to_create:
+            continue
         full_path = (resolved_project / file_path).resolve()
         if not full_path.is_relative_to(resolved_project):
             invalid_paths.append(file_path)

@@ -1,4 +1,5 @@
 import { Zap, Import, Radio } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { CollapsibleSection } from './CollapsibleSection';
 import { StatusBadge } from './StatusBadge';
 import { PasswordInput } from './PasswordInput';
@@ -29,13 +30,15 @@ export function LinearIntegrationSection({
   isCheckingLinear,
   onOpenImportModal,
 }: LinearIntegrationSectionProps) {
+  const { t } = useTranslation(['settings']);
+
   const badge = envConfig.linearEnabled ? (
     <StatusBadge status="success" label="Enabled" />
   ) : null;
 
   return (
     <CollapsibleSection
-      title="Linear Integration"
+      title={t('settings:integrations.linearTitle')}
       icon={<Zap className="h-4 w-4" />}
       isExpanded={isExpanded}
       onToggle={onToggle}
@@ -43,7 +46,7 @@ export function LinearIntegrationSection({
     >
       <div className="flex items-center justify-between">
         <div className="space-y-0.5">
-          <Label className="font-normal text-foreground">Enable Linear Sync</Label>
+          <Label className="font-normal text-foreground">{t('settings:integrations.enableLinear')}</Label>
           <p className="text-xs text-muted-foreground">
             Create and update Linear issues automatically
           </p>
@@ -57,7 +60,7 @@ export function LinearIntegrationSection({
       {envConfig.linearEnabled && (
         <>
           <div className="space-y-2">
-            <Label className="text-sm font-medium text-foreground">API Key</Label>
+            <Label className="text-sm font-medium text-foreground">{t('settings:integrations.apiKey')}</Label>
             <p className="text-xs text-muted-foreground">
               Get your API key from{' '}
               <a
@@ -98,7 +101,7 @@ export function LinearIntegrationSection({
               <div className="flex items-start gap-3">
                 <Import className="h-5 w-5 text-info mt-0.5" />
                 <div className="flex-1">
-                  <p className="text-sm font-medium text-foreground">Import Existing Tasks</p>
+                  <p className="text-sm font-medium text-foreground">{t('settings:integrations.importExistingTasks')}</p>
                   <p className="text-xs text-muted-foreground mt-1">
                     Select which Linear issues to import into AutoBuild as tasks.
                   </p>

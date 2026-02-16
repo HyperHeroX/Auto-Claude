@@ -176,5 +176,14 @@
     "step3": "Click \"Re-authenticate\" on your profile",
     "gotIt": "Got It",
     "goToSettings": "Go to Settings"
+  },
+  "deleteConversation": {
+    "title": "Delete conversation?"
+  },
+  "deleteWorktree": {
+    "title": "Delete Worktree?"
+  },
+  "deleteTerminalWorktree": {
+    "title": "Delete Terminal Worktree?"
   }
 }

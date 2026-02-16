@@ -172,7 +172,8 @@
     "toggle": {
       "label": "Envoyer des rapports d'erreurs anonymes",
       "description": "Aidez-nous à identifier et corriger les problèmes"
-    }
+    },
+    "saveFailed": "Échec de l'enregistrement des paramètres de confidentialité. Veuillez réessayer."
   },
   "claudeCode": {
     "title": "Claude Code CLI",
@@ -185,11 +186,13 @@
     "status": {
       "installed": "Installé",
       "outdated": "Mise à jour disponible",
-      "notFound": "Non installé"
+      "notFound": "Non installé",
+      "error": "Erreur lors de la vérification du statut"
     },
     "version": {
       "current": "Version actuelle",
-      "latest": "Dernière version"
+      "latest": "Dernière version",
+      "path": "Chemin"
     },
     "install": {
       "button": "Installer Claude Code",
@@ -210,17 +213,21 @@
     "ide": {
       "label": "IDE préféré",
       "description": "Auto Claude ouvrira les worktrees dans cet éditeur",
-      "customPath": "Chemin IDE personnalisé"
+      "customPath": "Chemin IDE personnalisé",
+      "select": "Sélectionner l'IDE..."
     },
     "terminal": {
       "label": "Terminal préféré",
       "description": "Auto Claude ouvrira les sessions terminal ici",
-      "customPath": "Chemin terminal personnalisé"
+      "customPath": "Chemin terminal personnalisé",
+      "select": "Sélectionner le terminal..."
     },
     "detectedSummary": "Détecté sur votre système :",
     "noToolsDetected": "Aucun outil supplémentaire détecté (VS Code et le terminal système seront utilisés)",
     "custom": "Personnalisé...",
-    "saveAndContinue": "Enregistrer et continuer"
+    "saveAndContinue": "Enregistrer et continuer",
+    "back": "Retour",
+    "saving": "Enregistrement..."
   },
   "ollama": {
     "notInstalled": {
@@ -238,6 +245,145 @@
       "description": "Ollama est installé mais non démarré. Lancez Ollama pour utiliser les modèles d'embeddings locaux.",
       "retry": "Réessayer",
       "fallbackNote": "La mémoire fonctionnera toujours avec la recherche par mots-clés même sans embeddings."
+    },
+    "checkingModels": "Vérification des modèles Ollama...",
+    "badges": {
+      "recommended": "Recommandé",
+      "quality": "Qualité maximale",
+      "fast": "Le plus rapide",
+      "installed": "Installé"
+    },
+    "download": "Télécharger",
+    "downloadingModel": "Téléchargement...",
+    "startingDownload": "Démarrage du téléchargement...",
+    "modelHint": "Sélectionnez un modèle installé pour la recherche sémantique. La mémoire fonctionne avec la recherche par mots-clés même sans embeddings."
+  },
+  "auth": {
+    "signInAnthropic": "Se connecter avec Anthropic",
+    "signInDescription": "Utilisez votre compte Anthropic",
+    "customApiKey": "Utiliser une clé API personnalisée",
+    "customApiKeyDescription": "Apportez votre propre clé API"
+  },
+  "authChoice": {
+    "title": "Choisir votre méthode d'authentification",
+    "subtitle": "Sélectionnez comment vous souhaitez vous authentifier avec Claude. Vous pouvez modifier cela plus tard dans les Paramètres.",
+    "oauthTitle": "Se connecter avec Anthropic",
+    "oauthDescription": "Utilisez votre compte Anthropic pour vous authentifier. Flux OAuth simple et sécurisé.",
+    "apiKeyTitle": "Utiliser une clé API personnalisée",
+    "apiKeyDescription": "Apportez votre propre clé API d'Anthropic ou d'un fournisseur API compatible. ⚠️ Hautement expérimental — peut engendrer des coûts importants.",
+    "info": "Les deux options donnent un accès complet aux fonctionnalités Claude Code. Choisissez selon votre préférence.",
+    "skipForNow": "Passer pour l'instant"
+  },
+  "firstSpec": {
+    "title": "Créer votre première tâche",
+    "subtitle": "Décrivez ce que vous voulez construire et laissez Auto Claude s'occuper du reste",
+    "success": {
+      "title": "Créateur de tâches ouvert",
+      "description": "Génial ! Vous pouvez créer votre première tâche maintenant ou continuer avec l'assistant. Vous pouvez toujours créer des tâches plus tard depuis le tableau de bord."
+    },
+    "tipsTitle": "Conseils pour de bonnes tâches",
+    "tips": {
+      "beDescriptive": {
+        "title": "Soyez descriptif",
+        "description": "Décrivez clairement ce que vous voulez construire. Incluez les exigences, contraintes et comportements attendus."
+      },
+      "startSmall": {
+        "title": "Commencez petit",
+        "description": "Commencez par une tâche ciblée comme ajouter une fonctionnalité ou corriger un bug. Les tâches plus petites sont plus faciles à vérifier."
+      },
+      "includeContext": {
+        "title": "Incluez du contexte",
+        "description": "Mentionnez les fichiers, APIs ou patterns pertinents. Plus vous fournissez de contexte, meilleurs seront les résultats."
+      },
+      "letAiHelp": {
+        "title": "Laissez l'IA aider",
+        "description": "L'IA peut générer des titres et classifier les tâches. Concentrez-vous sur la description de ce que vous voulez, pas sur les détails."
+      }
+    },
+    "example": {
+      "title": "Exemple de description de tâche :",
+      "description": "\"Ajouter un bouton de mode sombre à la page des paramètres. Il doit persister la préférence de l'utilisateur dans localStorage et appliquer le thème immédiatement sans rechargement de page. Utiliser les variables de couleur existantes dans styles/theme.css.\""
+    },
+    "openTaskCreator": "Ouvrir le créateur de tâches",
+    "skipInfoCreated": "Vous pouvez continuer avec l'assistant maintenant ou créer plus de tâches.",
+    "skipInfo": "Vous pouvez passer cette étape et créer des tâches plus tard depuis le tableau de bord.",
+    "back": "Retour",
+    "skip": "Passer",
+    "continue": "Continuer"
+  },
+  "graphiti": {
+    "pageTitle": "Mémoire & Contexte",
+    "pageSubtitle": "Activer Graphiti pour une mémoire persistante entre les sessions de code",
+    "success": {
+      "title": "Graphiti configuré avec succès",
+      "description": "Les fonctionnalités de mémoire sont activées. Auto Claude maintiendra le contexte entre les sessions pour une meilleure compréhension du code."
+    },
+    "reconfigure": "Reconfigurer les paramètres Graphiti",
+    "dbAutoCreate": {
+      "title": "La base de données sera créée automatiquement",
+      "description": "LadybugDB utilise une base de données intégrée — pas de Docker requis. La base de données sera créée lors de la première utilisation des fonctionnalités de mémoire."
+    },
+    "whatIsGraphiti": "Qu'est-ce que Graphiti ?",
+    "whatIsGraphitiDescription": "Graphiti est une couche de mémoire intelligente qui aide Auto Claude à retenir le contexte entre les sessions. Il utilise un graphe de connaissances pour stocker les découvertes, schémas et idées sur votre codebase.",
+    "enableToggle": "Activer la mémoire Graphiti",
+    "enableToggleDescription": "Utilise LadybugDB (intégré) et un fournisseur LLM/embedding",
+    "databaseName": "Nom de la base de données",
+    "databasePath": "Stocké dans ~/.auto-claude/graphs/",
+    "ready": "Prêt",
+    "issue": "Problème",
+    "llmProviderLabel": "Fournisseur LLM",
+    "embeddingProviderLabel": "Fournisseur d'embedding",
+    "testConnection": "Tester la connexion",
+    "testingConnection": "Test de connexion en cours...",
+    "allValidated": "Toutes les connexions validées avec succès !",
+    "apiKeyValidationNote": "Note : La validation de clé API ne supporte actuellement pleinement que OpenAI. Votre clé sera enregistrée et utilisée à l'exécution.",
+    "ollamaTestNote": "Note : La connexion Ollama sera testée en vérifiant si le serveur est accessible.",
+    "openaiApiKey": "Clé API OpenAI",
+    "getKeyFrom": "Obtenez votre clé sur",
+    "anthropicApiKey": "Clé API Anthropic",
+    "voyageApiKey": "Clé API Voyage",
+    "googleApiKey": "Clé API Google",
+    "groqApiKey": "Clé API Groq",
+    "openRouterApiKey": "Clé API OpenRouter",
+    "ollamaSettings": "Paramètres Ollama (Local)",
+    "ollamaEnsure": "Assurez-vous qu'Ollama est en cours d'exécution localement. Voir",
+    "saveFailed": "Échec de l'enregistrement de la configuration Graphiti",
+    "testFailed": "Échec du test de connexion",
+    "unknownError": "Erreur inconnue",
+    "back": "Retour",
+    "skip": "Passer",
+    "saving": "Enregistrement...",
+    "saveAndContinue": "Enregistrer et continuer",
+    "continueButton": "Continuer",
+    "azureSettings": "Paramètres Azure OpenAI",
+    "apiKey": "Clé API",
+    "baseUrl": "URL de base",
+    "llmDeployment": "Nom du déploiement LLM",
+    "embeddingDeployment": "Nom du déploiement d'embedding",
+    "llmModel": "Modèle LLM",
+    "embeddingModel": "Modèle d'embedding",
+    "embeddingDimension": "Dimension d'embedding",
+    "benefit1": "Mémoire persistante entre les sessions de code",
+    "benefit2": "Meilleure compréhension de votre base de code au fil du temps",
+    "benefit3": "Réduit les explications répétitives",
+    "benefit4": "Pas de Docker requis — utilise une base de données intégrée",
+    "learnMore": "En savoir plus sur Graphiti",
+    "llmProviders": {
+      "openai": "Modèles GPT (recommandé)",
+      "anthropic": "Modèles Claude",
+      "google": "Modèles Gemini",
+      "groq": "Modèles Llama (inférence rapide)",
+      "openrouter": "Agrégateur multi-fournisseurs",
+      "azure": "Déploiement Azure Enterprise",
+      "ollama": "Modèles locaux (gratuit)"
+    },
+    "embeddingProviders": {
+      "ollama": "Embeddings locaux (gratuit)",
+      "openai": "text-embedding-3-small (recommandé)",
+      "voyage": "voyage-3 (idéal avec Anthropic)",
+      "google": "Gemini text-embedding-004",
+      "openrouter": "Embeddings compatibles OpenAI",
+      "azure": "Embeddings Azure Enterprise"
     }
   }
 }

@@ -46,5 +46,32 @@
     "detached": "(detached)",
     "remotePushFailed": "Remote Tracking Not Set Up",
     "remotePushFailedDescription": "Worktree created but the branch could not be pushed to remote. You may need to run git push -u manually."
+  },
+  "dropToInsertPath": "Drop to insert path",
+  "title": {
+    "doubleClickToRename": "Double-click to rename"
+  },
+  "taskSelector": {
+    "selectTask": "Select task...",
+    "currentTask": "Current task",
+    "switchTo": "Switch to...",
+    "clearTask": "Clear task",
+    "availableTasks": "Available tasks",
+    "addNewTask": "Add new task",
+    "noTasksAvailable": "No tasks available",
+    "createInKanban": "Create tasks in the Kanban board"
+  },
+  "grid": {
+    "title": "Agent Terminals",
+    "description": "Spawn multiple terminals to run Claude agents in parallel.",
+    "newTerminal": "New Terminal",
+    "terminalCount": "{{count}} / {{max}} terminals",
+    "history": "History",
+    "restoreSessions": "Restore sessions from...",
+    "sessionCount": "{{count}} session",
+    "sessionCount_plural": "{{count}} sessions",
+    "invokeClaudeAll": "Invoke Claude All",
+    "files": "Files",
+    "defaultTitle": "Terminal"
   }
 }

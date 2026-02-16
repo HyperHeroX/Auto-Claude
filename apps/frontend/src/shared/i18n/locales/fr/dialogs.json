@@ -176,5 +176,14 @@
     "step3": "Cliquez sur « Réauthentifier » sur votre profil",
     "gotIt": "Compris",
     "goToSettings": "Aller aux paramètres"
+  },
+  "deleteConversation": {
+    "title": "Supprimer la conversation ?"
+  },
+  "deleteWorktree": {
+    "title": "Supprimer le worktree ?"
+  },
+  "deleteTerminalWorktree": {
+    "title": "Supprimer le worktree du terminal ?"
   }
 }

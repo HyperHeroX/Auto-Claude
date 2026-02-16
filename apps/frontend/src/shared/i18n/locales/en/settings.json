@@ -708,6 +708,15 @@
     },
     "customServers": "Custom Servers",
     "addCustomServer": "Add Custom Server",
+    "mcpServersLabel": "MCP Servers",
+    "availableTools": "Available Tools",
+    "textOnlyNoTools": "Text-only (no tools)",
+    "agentCount": "({{count}} agents)",
+    "forProject": "for {{name}}",
+    "testConnectionTitle": "Test Connection",
+    "testLabel": "Test",
+    "editServer": "Edit",
+    "deleteServer": "Delete",
     "editCustomServer": "Edit Custom Server",
     "customServerDescription": "Add a command-based or HTTP-based MCP server",
     "serverType": "Server Type",
@@ -893,5 +902,137 @@
       "label": "PR Template Filler",
       "description": "AI-fills GitHub PR templates from code changes"
     }
+  },
+  "agentProfiles": {
+    "title": "Agent Profiles"
+  },
+  "project": {
+    "notInitialized": "Not Initialized",
+    "initialized": "Initialized",
+    "selectPlaceholder": "Select a project...",
+    "noProjects": "No projects yet"
+  },
+  "agentConfig": {
+    "title": "Agent Configuration",
+    "model": "Model"
+  },
+  "claudeAuth": {
+    "title": "Claude Authentication",
+    "claudeCli": "Claude CLI"
+  },
+  "memory": {
+    "title": "Memory",
+    "enableMemory": "Enable Memory",
+    "enableAgentAccess": "Enable Agent Memory Access",
+    "graphitiUrl": "Graphiti MCP Server URL",
+    "embeddingProvider": "Embedding Provider",
+    "providers": {
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azure": "Azure OpenAI"
+    },
+    "voyageApiKey": "Voyage AI API Key",
+    "embeddingModel": "Embedding Model",
+    "googleApiKey": "Google AI API Key",
+    "azureConfig": "Azure OpenAI Configuration",
+    "apiKey": "API Key",
+    "baseUrl": "Base URL",
+    "embeddingDeployment": "Embedding Deployment Name",
+    "ollamaConfig": "Ollama Configuration",
+    "embeddingDimension": "Embedding Dimension",
+    "databaseName": "Database Name"
+  },
+  "integrations": {
+    "enableLinear": "Enable Linear Sync",
+    "apiKey": "API Key",
+    "connectionStatus": "Connection Status",
+    "importExistingTasks": "Import Existing Tasks",
+    "enableGithubIssues": "Enable GitHub Issues",
+    "personalAccessToken": "Personal Access Token",
+    "tokenInstructions": "Create a token with repo scope from GitHub Settings > Developer settings > Personal access tokens",
+    "repository": "Repository",
+    "issuesAvailable": "Issues Available",
+    "mainBranch": "Main Branch",
+    "githubTitle": "GitHub Integration",
+    "githubAuth": "GitHub Authentication",
+    "linearTitle": "Linear Integration",
+    "connectedViaCli": "Connected via GitHub CLI",
+    "searchRepos": "Search repositories..."
+  },
+  "display": {
+    "appearanceMode": "Appearance Mode",
+    "colorTheme": "Color Theme",
+    "colorThemeDescription": "Select a color palette for the interface",
+    "backgroundColor": "Background color",
+    "accentColor": "Accent color",
+    "resetToDefault": "Reset to default (100%)",
+    "applyScale": "Apply scale changes"
+  },
+  "enterTokenManually": "Enter token manually",
+  "copyTokenBelow": "Copy the token and paste it below",
+  "tokenPlaceholder": "Enter your token...",
+  "infrastructure": {
+    "memoryTitle": "Memory Infrastructure",
+    "kuzuDatabase": "Kuzu Database",
+    "installed": "Installed",
+    "notAvailable": "Not Available",
+    "database": "Database",
+    "ready": "Ready",
+    "createdOnFirstUse": "Will be created on first use",
+    "requiresKuzu": "Requires Kuzu"
+  },
+  "linear": {
+    "team": "Team",
+    "allProjects": "All projects",
+    "selectTeam": "Select a team to view issues"
+  },
+  "claudeCodeCli": "Claude Code CLI",
+  "claudeAuth": {
+    "title": "Claude Authentication Required",
+    "description": "A Claude Code OAuth token is required to use AI features like Ideation and Roadmap generation.",
+    "tokenConfigured": "Token configured successfully",
+    "aiFeatures": "You can now use AI features like Ideation and Roadmap generation.",
+    "useExistingAccount": "Use Existing Account",
+    "authenticatedAccounts_one": "You have {{count}} authenticated Claude account. Select one to use:",
+    "authenticatedAccounts_other": "You have {{count}} authenticated Claude accounts. Select one to use:",
+    "selectAccount": "Select Account",
+    "default": "(Default)",
+    "saving": "Saving...",
+    "useThisAccount": "Use This Account",
+    "or": "or",
+    "authenticateNewAccount": "Or Authenticate New Account",
+    "authenticateWithBrowser": "Authenticate with Browser",
+    "addNewAccountDesc": "Add a new Claude account by logging in with your browser.",
+    "openBrowserDesc": "Click below to open your browser and log in with your Claude account.",
+    "waitingForAuth": "Waiting for authentication...",
+    "authenticateNewAccountBtn": "Authenticate New Account",
+    "browserWindowNote": "A browser window should open. Complete the authentication there, then return here.",
+    "enterTokenManually": "Enter token manually",
+    "steps": "Steps:",
+    "step1": "Install Claude Code CLI if you haven't already",
+    "step3": "Copy the token and paste it below",
+    "viewDocumentation": "View documentation",
+    "claudeCodeOAuthToken": "Claude Code OAuth Token",
+    "enterTokenPlaceholder": "Enter your token...",
+    "hideToken": "Hide token",
+    "showToken": "Show token",
+    "tokenSavedTo": "The token will be saved to",
+    "tokenAlreadyConfigured": "A token is already configured.",
+    "replaceTokenManual": "Enter a new token above to replace it.",
+    "replaceTokenAuth": "Authenticate again to replace it.",
+    "close": "Close",
+    "cancel": "Cancel",
+    "saveToken": "Save Token",
+    "failedToCheckToken": "Failed to check token"
+  },
+  "security": {
+    "voyageApiKey": "Voyage AI API Key",
+    "googleApiKey": "Google AI API Key",
+    "azureConfig": "Azure OpenAI Configuration",
+    "apiKey": "API Key",
+    "baseUrl": "Base URL",
+    "embeddingDeployment": "Embedding Deployment Name",
+    "selectEmbeddingModel": "Select Embedding Model"
   }
 }

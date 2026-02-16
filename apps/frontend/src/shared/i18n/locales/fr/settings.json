@@ -725,6 +725,15 @@
     "headerName": "Nom de l'en-tête",
     "headerValue": "Valeur de l'en-tête",
     "noCustomServers": "Aucun serveur personnalisé configuré. Ajoutez-en un pour l'utiliser avec vos agents.",
+    "mcpServersLabel": "Serveurs MCP",
+    "availableTools": "Outils disponibles",
+    "textOnlyNoTools": "Texte uniquement (pas d'outils)",
+    "agentCount": "({{count}} agents)",
+    "forProject": "pour {{name}}",
+    "testConnectionTitle": "Tester la connexion",
+    "testLabel": "Test",
+    "editServer": "Modifier",
+    "deleteServer": "Supprimer",
     "errorNameRequired": "Le nom du serveur est requis",
     "errorIdExists": "Un serveur avec cet ID existe déjà",
     "errorCommandRequired": "La commande est requise pour les serveurs basés sur commande",
@@ -893,5 +902,137 @@
       "label": "Remplisseur de modèle PR",
       "description": "Remplit intelligemment les modèles de PR GitHub à partir des changements de code"
     }
+  },
+  "agentProfiles": {
+    "title": "Profils d'agent"
+  },
+  "project": {
+    "notInitialized": "Non initialisé",
+    "initialized": "Initialisé",
+    "selectPlaceholder": "Sélectionner un projet...",
+    "noProjects": "Aucun projet"
+  },
+  "agentConfig": {
+    "title": "Configuration de l'agent",
+    "model": "Modèle"
+  },
+  "claudeAuth": {
+    "title": "Authentification Claude",
+    "claudeCli": "Claude CLI"
+  },
+  "memory": {
+    "title": "Mémoire",
+    "enableMemory": "Activer la mémoire",
+    "enableAgentAccess": "Activer l'accès mémoire de l'agent",
+    "graphitiUrl": "URL du serveur MCP Graphiti",
+    "embeddingProvider": "Fournisseur d'embeddings",
+    "providers": {
+      "openai": "OpenAI",
+      "voyage": "Voyage AI",
+      "google": "Google AI",
+      "azure": "Azure OpenAI"
+    },
+    "voyageApiKey": "Clé API Voyage AI",
+    "embeddingModel": "Modèle d'embedding",
+    "googleApiKey": "Clé API Google AI",
+    "azureConfig": "Configuration Azure OpenAI",
+    "apiKey": "Clé API",
+    "baseUrl": "URL de base",
+    "embeddingDeployment": "Nom du déploiement d'embedding",
+    "ollamaConfig": "Configuration Ollama",
+    "embeddingDimension": "Dimension d'embedding",
+    "databaseName": "Nom de la base de données"
+  },
+  "integrations": {
+    "enableLinear": "Activer la synchronisation Linear",
+    "apiKey": "Clé API",
+    "connectionStatus": "État de la connexion",
+    "importExistingTasks": "Importer les tâches existantes",
+    "enableGithubIssues": "Activer les issues GitHub",
+    "personalAccessToken": "Jeton d'accès personnel",
+    "tokenInstructions": "Créez un jeton avec la portée repo depuis GitHub Settings > Developer settings > Personal access tokens",
+    "repository": "Dépôt",
+    "issuesAvailable": "Issues disponibles",
+    "mainBranch": "Branche principale",
+    "githubTitle": "Intégration GitHub",
+    "githubAuth": "Authentification GitHub",
+    "linearTitle": "Intégration Linear",
+    "connectedViaCli": "Connecté via GitHub CLI",
+    "searchRepos": "Rechercher des dépôts..."
+  },
+  "display": {
+    "appearanceMode": "Mode d'apparence",
+    "colorTheme": "Thème de couleur",
+    "colorThemeDescription": "Sélectionnez une palette de couleurs pour l'interface",
+    "backgroundColor": "Couleur de fond",
+    "accentColor": "Couleur d'accent",
+    "resetToDefault": "Réinitialiser (100%)",
+    "applyScale": "Appliquer les changements d'échelle"
+  },
+  "enterTokenManually": "Saisir le jeton manuellement",
+  "copyTokenBelow": "Copiez le jeton et collez-le ci-dessous",
+  "tokenPlaceholder": "Entrez votre jeton...",
+  "infrastructure": {
+    "memoryTitle": "Infrastructure mémoire",
+    "kuzuDatabase": "Base de données Kuzu",
+    "installed": "Installé",
+    "notAvailable": "Non disponible",
+    "database": "Base de données",
+    "ready": "Prêt",
+    "createdOnFirstUse": "Sera créé à la première utilisation",
+    "requiresKuzu": "Requiert Kuzu"
+  },
+  "linear": {
+    "team": "Équipe",
+    "allProjects": "Tous les projets",
+    "selectTeam": "Sélectionnez une équipe pour voir les issues"
+  },
+  "claudeCodeCli": "Claude Code CLI",
+  "claudeAuth": {
+    "title": "Authentification Claude requise",
+    "description": "Un jeton OAuth Claude Code est nécessaire pour utiliser les fonctionnalités IA comme Idéation et Génération de feuille de route.",
+    "tokenConfigured": "Jeton configuré avec succès",
+    "aiFeatures": "Vous pouvez maintenant utiliser les fonctionnalités IA comme Idéation et Génération de feuille de route.",
+    "useExistingAccount": "Utiliser un compte existant",
+    "authenticatedAccounts_one": "Vous avez {{count}} compte Claude authentifié. Sélectionnez-en un :",
+    "authenticatedAccounts_other": "Vous avez {{count}} comptes Claude authentifiés. Sélectionnez-en un :",
+    "selectAccount": "Sélectionner un compte",
+    "default": "(Par défaut)",
+    "saving": "Enregistrement...",
+    "useThisAccount": "Utiliser ce compte",
+    "or": "ou",
+    "authenticateNewAccount": "Ou authentifier un nouveau compte",
+    "authenticateWithBrowser": "S'authentifier avec le navigateur",
+    "addNewAccountDesc": "Ajoutez un nouveau compte Claude en vous connectant avec votre navigateur.",
+    "openBrowserDesc": "Cliquez ci-dessous pour ouvrir votre navigateur et vous connecter avec votre compte Claude.",
+    "waitingForAuth": "En attente de l'authentification...",
+    "authenticateNewAccountBtn": "Authentifier un nouveau compte",
+    "browserWindowNote": "Une fenêtre de navigateur devrait s'ouvrir. Complétez l'authentification là-bas, puis revenez ici.",
+    "enterTokenManually": "Entrer le jeton manuellement",
+    "steps": "Étapes :",
+    "step1": "Installez Claude Code CLI si ce n'est pas déjà fait",
+    "step3": "Copiez le jeton et collez-le ci-dessous",
+    "viewDocumentation": "Voir la documentation",
+    "claudeCodeOAuthToken": "Jeton OAuth Claude Code",
+    "enterTokenPlaceholder": "Entrez votre jeton...",
+    "hideToken": "Masquer le jeton",
+    "showToken": "Afficher le jeton",
+    "tokenSavedTo": "Le jeton sera enregistré dans",
+    "tokenAlreadyConfigured": "Un jeton est déjà configuré.",
+    "replaceTokenManual": "Entrez un nouveau jeton ci-dessus pour le remplacer.",
+    "replaceTokenAuth": "Authentifiez-vous à nouveau pour le remplacer.",
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "saveToken": "Enregistrer le jeton",
+    "failedToCheckToken": "Échec de la vérification du jeton"
+  },
+  "security": {
+    "voyageApiKey": "Clé API Voyage AI",
+    "googleApiKey": "Clé API Google AI",
+    "azureConfig": "Configuration Azure OpenAI",
+    "apiKey": "Clé API",
+    "baseUrl": "URL de base",
+    "embeddingDeployment": "Nom du déploiement d'embedding",
+    "selectEmbeddingModel": "Sélectionner le modèle d'embedding"
   }
 }

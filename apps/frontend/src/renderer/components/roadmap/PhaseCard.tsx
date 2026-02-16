@@ -19,7 +19,7 @@ export function PhaseCard({
   onConvertToSpec,
   onGoToTask,
 }: PhaseCardProps) {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation(['roadmap', 'common']);
   const [isExpanded, setIsExpanded] = useState(false);
   const completedCount = features.filter((f) => f.status === 'done').length;
   const progress = features.length > 0 ? (completedCount / features.length) * 100 : 0;
@@ -59,7 +59,7 @@ export function PhaseCard({
       {/* Progress */}
       <div className="mb-4">
         <div className="flex items-center justify-between text-sm mb-1">
-          <span className="text-muted-foreground">Progress</span>
+          <span className="text-muted-foreground">{t('roadmap:progress')}</span>
           <span>
             {completedCount}/{features.length} features
           </span>
@@ -70,7 +70,7 @@ export function PhaseCard({
       {/* Milestones */}
       {phase.milestones.length > 0 && (
         <div className="mb-4">
-          <h4 className="text-sm font-medium mb-2">Milestones</h4>
+          <h4 className="text-sm font-medium mb-2">{t('roadmap:milestones')}</h4>
           <div className="space-y-2">
             {phase.milestones.map((milestone) => (
               <div key={milestone.id} className="flex items-center gap-2 text-sm">
@@ -94,7 +94,7 @@ export function PhaseCard({
 
       {/* Features */}
       <div>
-        <h4 className="text-sm font-medium mb-2">Features ({features.length})</h4>
+        <h4 className="text-sm font-medium mb-2">{t('roadmap:phase.featuresCount', { count: features.length })}</h4>
         <div className="grid gap-2">
           {visibleFeatures.map((feature) => (
             <div
@@ -134,7 +134,7 @@ export function PhaseCard({
                   }}
                 >
                   <ExternalLink className="h-3 w-3 mr-1" />
-                  View Task
+                  {t('roadmap:phase.viewTask')}
                 </Button>
               ) : (
                 <Button
@@ -147,7 +147,7 @@ export function PhaseCard({
                   }}
                 >
                   <Play className="h-3 w-3 mr-1" />
-                  Build
+                  {t('roadmap:phase.build')}
                 </Button>
               )}
             </div>
