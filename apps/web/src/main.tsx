@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-function App() {
-  return <div>Auto Claude Web - Loading...</div>;
-}
+import { WebApp } from './WebApp';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <App />
+    <WebApp />
   </React.StrictMode>
 );

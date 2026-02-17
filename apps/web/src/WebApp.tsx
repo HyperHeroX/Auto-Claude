@@ -1,0 +1,23 @@
+import React, { useEffect, useState } from 'react';
+
+export function WebApp() {
+  const [health, setHealth] = useState<string>('checking...');
+
+  useEffect(() => {
+    fetch('/api/v1/health')
+      .then((r) => r.json())
+      .then((d) => setHealth(d.status))
+      .catch(() => setHealth('error'));
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-gray-900 text-white flex items-center justify-center">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4">Auto Claude Web</h1>
+        <p className="text-gray-400">
+          API Status: <span className={health === 'ok' ? 'text-green-400' : 'text-red-400'}>{health}</span>
+        </p>
+      </div>
+    </div>
+  );
+}
