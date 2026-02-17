@@ -1,0 +1,25 @@
+# Development overrides — auto-loaded by podman-compose
+version: "3.9"
+services:
+  frontend:
+    build:
+      dockerfile: apps/web/Dockerfile
+    volumes:
+      - ./apps/web/src:/app/src
+      - ./apps/frontend/src/shared:/frontend-shared
+      - ./apps/frontend/src/renderer:/frontend-renderer
+    command: sh -c "npm run dev -- --host 0.0.0.0 --port ${PORT:-3000}"
+    environment:
+      - NODE_ENV=development
+
+  backend:
+    volumes:
+      - ./apps/backend:/app
+    command: uvicorn api.main:app --reload --host 0.0.0.0 --port ${PORT:-8000}
+    environment:
+      - DEBUG=true
+
+  terminal:
+    volumes:
+      - ./apps/terminal:/app
+    command: node --watch server.js --port=${PORT:-8001}

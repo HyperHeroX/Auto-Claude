@@ -1,0 +1,62 @@
+version: "3.9"
+services:
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    ports:
+      - "${FRONTEND_PORT:-3000}:${FRONTEND_PORT:-3000}"
+    environment:
+      - PORT=${FRONTEND_PORT:-3000}
+      - BACKEND_HOST=backend
+      - BACKEND_PORT=${BACKEND_PORT:-8000}
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    ports:
+      - "${BACKEND_PORT:-8000}:${BACKEND_PORT:-8000}"
+    environment:
+      - PORT=${BACKEND_PORT:-8000}
+      - TERMINAL_WS_URL=ws://terminal:${TERMINAL_PORT:-8001}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - DATA_DIR=/data
+      - WORKSPACE_DIR=/workspace
+    volumes:
+      - project-data:/data
+      - ${PROJECT_DIR:-.}:/workspace:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${BACKEND_PORT:-8000}/api/v1/health"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 10s
+    depends_on:
+      terminal:
+        condition: service_healthy
+    restart: unless-stopped
+
+  terminal:
+    build:
+      context: .
+      dockerfile: apps/terminal/Dockerfile
+    environment:
+      - PORT=${TERMINAL_PORT:-8001}
+    volumes:
+      - project-data:/data
+      - ${PROJECT_DIR:-.}:/workspace
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://localhost:${PORT:-8001}/health').then(r => process.exit(r.ok ? 0 : 1)).catch(() => process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+      start_period: 5s
+    restart: unless-stopped
+
+volumes:
+  project-data:
