@@ -12,7 +12,8 @@
     "test:coverage": "vitest run --coverage",
     "typecheck": "tsc --noEmit",
     "lint": "biome check src/",
-    "lint:fix": "biome check --write src/"
+    "lint:fix": "biome check --write src/",
+    "test:e2e": "npx playwright test --config=e2e/playwright.config.ts"
   },
   "dependencies": {
     "react": "^19.0.0",
