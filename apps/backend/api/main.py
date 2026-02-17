@@ -22,6 +22,21 @@ def create_app() -> FastAPI:
     async def health():
         return {"status": "ok"}
 
+    from api.routes.projects import router as projects_router
+    app.include_router(projects_router)
+
+    from api.routes.tasks import router as tasks_router
+    app.include_router(tasks_router)
+
+    from api.routes.settings import router as settings_router
+    app.include_router(settings_router)
+
+    from api.routes.auth import router as auth_router
+    app.include_router(auth_router)
+
+    from api.websocket.agents import router as agents_ws_router
+    app.include_router(agents_ws_router)
+
     return app
 
 
