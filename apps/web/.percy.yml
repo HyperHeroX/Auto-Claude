@@ -1,0 +1,12 @@
+version: 2
+snapshot:
+  widths: [375, 768, 1280]
+  min-height: 1024
+  percy-css: |
+    /* Disable animations for stable screenshots */
+    *, *::before, *::after {
+      animation-duration: 0s !important;
+      animation-delay: 0s !important;
+      transition-duration: 0s !important;
+      transition-delay: 0s !important;
+    }
